@@ -16,6 +16,7 @@
 ### Properties
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
+| public | [$airline](../classes/YooKassa-Common-AbstractPaymentRequest.md#property_airline) |  | Данные фискального чека 54-ФЗ |
 | public | [$amount](../classes/YooKassa-Common-AbstractPaymentRequest.md#property_amount) |  | Сумма |
 | public | [$receipt](../classes/YooKassa-Common-AbstractPaymentRequest.md#property_receipt) |  | Данные фискального чека 54-ФЗ |
 | public | [$transfers](../classes/YooKassa-Common-AbstractPaymentRequest.md#property_transfers) |  | Данные о распределении платежа между магазинами |
@@ -31,10 +32,12 @@
 | public | [__unset()](../classes/YooKassa-Common-AbstractObject.md#method___unset) |  | Удаляет свойство |
 | public | [clearValidationError()](../classes/YooKassa-Common-AbstractRequest.md#method_clearValidationError) |  | Очищает статус валидации текущего запроса |
 | public | [fromArray()](../classes/YooKassa-Common-AbstractObject.md#method_fromArray) |  | Устанавливает значения свойств текущего объекта из массива |
+| public | [getAirline()](../classes/YooKassa-Common-AbstractPaymentRequest.md#method_getAirline) |  | Возвращает данные авиабилетов |
 | public | [getAmount()](../classes/YooKassa-Common-AbstractPaymentRequest.md#method_getAmount) |  | Возвращает сумму оплаты |
 | public | [getLastValidationError()](../classes/YooKassa-Common-AbstractRequest.md#method_getLastValidationError) |  | Возвращает последнюю ошибку валидации |
 | public | [getReceipt()](../classes/YooKassa-Common-AbstractPaymentRequest.md#method_getReceipt) |  | Возвращает чек, если он есть |
 | public | [getTransfers()](../classes/YooKassa-Common-AbstractPaymentRequest.md#method_getTransfers) |  | Возвращает данные о распределении денег — сколько и в какой магазин нужно перевести. |
+| public | [hasAirline()](../classes/YooKassa-Common-AbstractPaymentRequest.md#method_hasAirline) |  | Проверяет, были ли установлены данные авиабилетов |
 | public | [hasAmount()](../classes/YooKassa-Common-AbstractPaymentRequest.md#method_hasAmount) |  | Проверяет, была ли установлена сумма оплаты |
 | public | [hasReceipt()](../classes/YooKassa-Common-AbstractPaymentRequest.md#method_hasReceipt) |  | Проверяет наличие чека |
 | public | [hasTransfers()](../classes/YooKassa-Common-AbstractPaymentRequest.md#method_hasTransfers) |  | Проверяет наличие данных о распределении денег |
@@ -44,7 +47,8 @@
 | public | [offsetSet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetSet) |  | Устанавливает значение свойства |
 | public | [offsetUnset()](../classes/YooKassa-Common-AbstractObject.md#method_offsetUnset) |  | Удаляет свойство |
 | public | [removeReceipt()](../classes/YooKassa-Common-AbstractPaymentRequest.md#method_removeReceipt) |  | Удаляет чек из запроса |
-| public | [setAmount()](../classes/YooKassa-Common-AbstractPaymentRequest.md#method_setAmount) |  | Устанавливает сумму оплаты |
+| public | [setAirline()](../classes/YooKassa-Common-AbstractPaymentRequest.md#method_setAirline) |  | Устанавливает информацию об авиабилетах |
+| public | [setAmount()](../classes/YooKassa-Common-AbstractPaymentRequest.md#method_setAmount) |  | Устанавливает сумму |
 | public | [setReceipt()](../classes/YooKassa-Common-AbstractPaymentRequest.md#method_setReceipt) |  | Устанавливает чек |
 | public | [setTransfers()](../classes/YooKassa-Common-AbstractPaymentRequest.md#method_setTransfers) |  | Устанавливает transfers (массив распределения денег между магазинами) |
 | public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
@@ -69,6 +73,18 @@
 
 ---
 ## Properties
+<a name="property_airline"></a>
+#### public $airline : \YooKassa\Model\AirlineInterface
+---
+***Description***
+
+Данные фискального чека 54-ФЗ
+
+**Type:** <a href="../classes/YooKassa-Model-AirlineInterface.html"><abbr title="\YooKassa\Model\AirlineInterface">AirlineInterface</abbr></a>
+
+**Details:**
+
+
 <a name="property_amount"></a>
 #### public $amount : \YooKassa\Model\AmountInterface
 ---
@@ -258,6 +274,23 @@ public fromArray(array|\Traversable $sourceArray) : mixed
 **Returns:** mixed - 
 
 
+<a name="method_getAirline" class="anchor"></a>
+#### public getAirline() : \YooKassa\Model\AirlineInterface
+
+```php
+public getAirline() : \YooKassa\Model\AirlineInterface
+```
+
+**Summary**
+
+Возвращает данные авиабилетов
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractPaymentRequest](../classes/YooKassa-Common-AbstractPaymentRequest.md)
+
+**Returns:** \YooKassa\Model\AirlineInterface - Данные авиабилетов
+
+
 <a name="method_getAmount" class="anchor"></a>
 #### public getAmount() : \YooKassa\Model\AmountInterface
 
@@ -329,6 +362,23 @@ public getTransfers() : \YooKassa\Model\TransferInterface[]
 * Inherited From: [\YooKassa\Common\AbstractPaymentRequest](../classes/YooKassa-Common-AbstractPaymentRequest.md)
 
 **Returns:** \YooKassa\Model\TransferInterface[] - Данные о распределении денег
+
+
+<a name="method_hasAirline" class="anchor"></a>
+#### public hasAirline() : bool
+
+```php
+public hasAirline() : bool
+```
+
+**Summary**
+
+Проверяет, были ли установлены данные авиабилетов
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractPaymentRequest](../classes/YooKassa-Common-AbstractPaymentRequest.md)
+
+**Returns:** bool - 
 
 
 <a name="method_hasAmount" class="anchor"></a>
@@ -444,10 +494,10 @@ public offsetGet(string $offset) : mixed
 
 
 <a name="method_offsetSet" class="anchor"></a>
-#### public offsetSet() : mixed
+#### public offsetSet() : void
 
 ```php
-public offsetSet(string $offset, mixed $value) : mixed
+public offsetSet(string $offset, mixed $value) : void
 ```
 
 **Summary**
@@ -463,14 +513,14 @@ public offsetSet(string $offset, mixed $value) : mixed
 | <code lang="php">string</code> | offset  | Имя свойства |
 | <code lang="php">mixed</code> | value  | Значение свойства |
 
-**Returns:** mixed - 
+**Returns:** void - 
 
 
 <a name="method_offsetUnset" class="anchor"></a>
-#### public offsetUnset() : mixed
+#### public offsetUnset() : void
 
 ```php
-public offsetUnset(string $offset) : mixed
+public offsetUnset(string $offset) : void
 ```
 
 **Summary**
@@ -485,7 +535,7 @@ public offsetUnset(string $offset) : mixed
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | offset  | Имя удаляемого свойства |
 
-**Returns:** mixed - 
+**Returns:** void - 
 
 
 <a name="method_removeReceipt" class="anchor"></a>
@@ -505,16 +555,16 @@ public removeReceipt() : mixed
 **Returns:** mixed - 
 
 
-<a name="method_setAmount" class="anchor"></a>
-#### public setAmount() : mixed
+<a name="method_setAirline" class="anchor"></a>
+#### public setAirline() : \YooKassa\Common\AbstractPaymentRequest
 
 ```php
-public setAmount(\YooKassa\Model\AmountInterface $value) : mixed
+public setAirline(\YooKassa\Model\AirlineInterface|array|null $value) : \YooKassa\Common\AbstractPaymentRequest
 ```
 
 **Summary**
 
-Устанавливает сумму оплаты
+Устанавливает информацию об авиабилетах
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractPaymentRequest](../classes/YooKassa-Common-AbstractPaymentRequest.md)
@@ -522,16 +572,38 @@ public setAmount(\YooKassa\Model\AmountInterface $value) : mixed
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">\YooKassa\Model\AmountInterface</code> | value  | Сумма оплаты |
+| <code lang="php">\YooKassa\Model\AirlineInterface OR array OR null</code> | value  | Объект данных длинной записи или ассоциативный массив с данными |
 
-**Returns:** mixed - 
+**Returns:** \YooKassa\Common\AbstractPaymentRequest - 
+
+
+<a name="method_setAmount" class="anchor"></a>
+#### public setAmount() : \YooKassa\Common\AbstractPaymentRequest
+
+```php
+public setAmount(\YooKassa\Model\AmountInterface|array|string $value) : \YooKassa\Common\AbstractPaymentRequest
+```
+
+**Summary**
+
+Устанавливает сумму
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractPaymentRequest](../classes/YooKassa-Common-AbstractPaymentRequest.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">\YooKassa\Model\AmountInterface OR array OR string</code> | value  | Сумма оплаты |
+
+**Returns:** \YooKassa\Common\AbstractPaymentRequest - Инстанс билдера запросов
 
 
 <a name="method_setReceipt" class="anchor"></a>
 #### public setReceipt() : mixed
 
 ```php
-public setReceipt(\YooKassa\Model\ReceiptInterface|null $value) : mixed
+public setReceipt(\YooKassa\Model\ReceiptInterface|array|null $value) : mixed
 ```
 
 **Summary**
@@ -544,7 +616,7 @@ public setReceipt(\YooKassa\Model\ReceiptInterface|null $value) : mixed
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">\YooKassa\Model\ReceiptInterface OR null</code> | value  | Инстанс чека или null для удаления информации о чеке |
+| <code lang="php">\YooKassa\Model\ReceiptInterface OR array OR null</code> | value  | Инстанс чека или null для удаления информации о чеке |
 
 ##### Throws:
 | Type | Description |
@@ -661,11 +733,11 @@ protected setValidationError(string $value) : mixed
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

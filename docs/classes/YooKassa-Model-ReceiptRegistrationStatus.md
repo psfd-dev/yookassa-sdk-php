@@ -10,19 +10,17 @@
 **Description:**
 
 Состояние регистрации фискального чека:
-<ul>
-<li>pending - Чек ожидает доставки</li>
-<li>succeeded - Успешно доставлен</li>
-<li>canceled - Чек не доставлен</li>
-</ul>
+- `pending` - Чек ожидает доставки
+- `succeeded` - Успешно доставлен
+- `canceled` - Чек не доставлен
 
 ---
 ### Constants
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
-| public | [PENDING](../classes/YooKassa-Model-ReceiptRegistrationStatus.md#constant_PENDING) |  |  |
-| public | [SUCCEEDED](../classes/YooKassa-Model-ReceiptRegistrationStatus.md#constant_SUCCEEDED) |  |  |
-| public | [CANCELED](../classes/YooKassa-Model-ReceiptRegistrationStatus.md#constant_CANCELED) |  |  |
+| public | [PENDING](../classes/YooKassa-Model-ReceiptRegistrationStatus.md#constant_PENDING) |  | Состояние регистрации фискального чека: ожидает доставки |
+| public | [SUCCEEDED](../classes/YooKassa-Model-ReceiptRegistrationStatus.md#constant_SUCCEEDED) |  | Состояние регистрации фискального чека: успешно доставлен |
+| public | [CANCELED](../classes/YooKassa-Model-ReceiptRegistrationStatus.md#constant_CANCELED) |  | Состояние регистрации фискального чека: не доставлен |
 
 ---
 ### Properties
@@ -50,22 +48,28 @@
 ## Constants
 <a name="constant_PENDING" class="anchor"></a>
 ###### PENDING
+Состояние регистрации фискального чека: ожидает доставки
+
 ```php
-PENDING = 'pending' : string
+PENDING = 'pending'
 ```
 
 
 <a name="constant_SUCCEEDED" class="anchor"></a>
 ###### SUCCEEDED
+Состояние регистрации фискального чека: успешно доставлен
+
 ```php
-SUCCEEDED = 'succeeded' : string
+SUCCEEDED = 'succeeded'
 ```
 
 
 <a name="constant_CANCELED" class="anchor"></a>
 ###### CANCELED
+Состояние регистрации фискального чека: не доставлен
+
 ```php
-CANCELED = 'canceled' : string
+CANCELED = 'canceled'
 ```
 
 
@@ -150,11 +154,11 @@ Static public valueExists(mixed $value) : bool
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

@@ -12,7 +12,7 @@ PayoutCancellationDetailsPartyCode - Возможные инициаторы о�
 ### Constants
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
-| public | [MERCHANT](../classes/YooKassa-Model-Payout-PayoutCancellationDetailsPartyCode.md#constant_MERCHANT) |  | Платформа (вы) |
+| public | [MERCHANT](../classes/YooKassa-Model-Payout-PayoutCancellationDetailsPartyCode.md#constant_MERCHANT) | *deprecated* | Платформа (вы) |
 | public | [YOO_KASSA](../classes/YooKassa-Model-Payout-PayoutCancellationDetailsPartyCode.md#constant_YOO_KASSA) |  | ЮKassa |
 | public | [PAYMENT_NETWORK](../classes/YooKassa-Model-Payout-PayoutCancellationDetailsPartyCode.md#constant_PAYMENT_NETWORK) |  | «Внешние» участники процесса выплаты (например, эмитент, сторонний платежный сервис) |
 
@@ -41,13 +41,15 @@ PayoutCancellationDetailsPartyCode - Возможные инициаторы о�
 ---
 ## Constants
 <a name="constant_MERCHANT" class="anchor"></a>
-###### MERCHANT
+###### ~~MERCHANT~~
 Платформа (вы)
 
 ```php
 MERCHANT = 'merchant'
 ```
 
+**deprecated**
+Будет удален в будущих версиях
 
 <a name="constant_YOO_KASSA" class="anchor"></a>
 ###### YOO_KASSA
@@ -148,11 +150,11 @@ Static public valueExists(mixed $value) : bool
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

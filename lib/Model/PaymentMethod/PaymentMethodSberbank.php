@@ -3,7 +3,7 @@
 /**
  * The MIT License
  *
- * Copyright (c) 2022 "YooMoney", NBСO LLC
+ * Copyright (c) 2023 "YooMoney", NBСO LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -38,7 +38,7 @@ use YooKassa\Model\PaymentMethodType;
  * @property string $type Тип объекта
  * @property string $phone Телефон пользователя
  */
-class PaymentMethodSberbank extends AbstractPaymentMethod
+class PaymentMethodSberbank extends PaymentMethodBankCard
 {
     /**
      * Телефон пользователя, на который зарегистрирован аккаунт в Сбербанке Онлайн.
@@ -52,7 +52,7 @@ class PaymentMethodSberbank extends AbstractPaymentMethod
 
     public function __construct()
     {
-        $this->_setType(PaymentMethodType::SBERBANK);
+        $this->setType(PaymentMethodType::SBERBANK);
     }
 
     /**
@@ -72,17 +72,25 @@ class PaymentMethodSberbank extends AbstractPaymentMethod
     {
         if ($value === null || $value === '') {
             throw new EmptyPropertyValueException('Empty phone value', 0, 'PaymentMethodSberbank.phone');
-        } elseif (TypeCast::canCastToString($value)) {
+        }
+
+        if (TypeCast::canCastToString($value)) {
             if (preg_match('/^[0-9]{4,15}$/', $value)) {
                 $this->_phone = (string)$value;
             } else {
                 throw new InvalidPropertyValueException(
-                    'Invalid phone value', 0, 'PaymentMethodSberbank.phone', $value
+                    'Invalid phone value',
+                    0,
+                    'PaymentMethodSberbank.phone',
+                    $value
                 );
             }
         } else {
             throw new InvalidPropertyValueTypeException(
-                'Invalid phone value type', 0, 'PaymentMethodSberbank.phone', $value
+                'Invalid phone value type',
+                0,
+                'PaymentMethodSberbank.phone',
+                $value
             );
         }
     }

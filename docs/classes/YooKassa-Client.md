@@ -34,6 +34,9 @@ $client->setAuthToken('token_XXXXXXX');
 | public | [RECEIPTS_PATH](../classes/YooKassa-Client-BaseClient.md#constant_RECEIPTS_PATH) |  | Точка входа для запросов к API по чекам |
 | public | [DEALS_PATH](../classes/YooKassa-Client-BaseClient.md#constant_DEALS_PATH) |  | Точка входа для запросов к API по сделкам |
 | public | [PAYOUTS_PATH](../classes/YooKassa-Client-BaseClient.md#constant_PAYOUTS_PATH) |  | Точка входа для запросов к API по выплатам |
+| public | [PERSONAL_DATA_PATH](../classes/YooKassa-Client-BaseClient.md#constant_PERSONAL_DATA_PATH) |  | Точка входа для запросов к API по персональным данным |
+| public | [SBP_BANKS_PATH](../classes/YooKassa-Client-BaseClient.md#constant_SBP_BANKS_PATH) |  | Точка входа для запросов к API по участникам СБП |
+| public | [SELF_EMPLOYED_PATH](../classes/YooKassa-Client-BaseClient.md#constant_SELF_EMPLOYED_PATH) |  | Точка входа для запросов к API по самозанятым |
 | public | [IDEMPOTENCY_KEY_HEADER](../classes/YooKassa-Client-BaseClient.md#constant_IDEMPOTENCY_KEY_HEADER) |  | Имя HTTP заголовка, используемого для передачи idempotence key |
 | public | [DEFAULT_DELAY](../classes/YooKassa-Client-BaseClient.md#constant_DEFAULT_DELAY) |  | Значение по умолчанию времени ожидания между запросами при отправке повторного запроса в случае получения ответа с HTTP статусом 202 |
 | public | [DEFAULT_TRIES_COUNT](../classes/YooKassa-Client-BaseClient.md#constant_DEFAULT_TRIES_COUNT) |  | Значение по умолчанию количества попыток получения информации от API если пришёл ответ с HTTP статусом 202 |
@@ -63,8 +66,10 @@ $client->setAuthToken('token_XXXXXXX');
 | public | [createDeal()](../classes/YooKassa-Client.md#method_createDeal) |  | Создание сделки. |
 | public | [createPayment()](../classes/YooKassa-Client.md#method_createPayment) |  | Создание платежа. |
 | public | [createPayout()](../classes/YooKassa-Client.md#method_createPayout) |  | Создание выплаты. |
+| public | [createPersonalData()](../classes/YooKassa-Client.md#method_createPersonalData) |  | Создание персональных данных |
 | public | [createReceipt()](../classes/YooKassa-Client.md#method_createReceipt) |  | Отправка чека в облачную кассу |
 | public | [createRefund()](../classes/YooKassa-Client.md#method_createRefund) |  | Проведение возврата платежа |
+| public | [createSelfEmployed()](../classes/YooKassa-Client.md#method_createSelfEmployed) |  | Создание самозанятого. |
 | public | [getApiClient()](../classes/YooKassa-Client-BaseClient.md#method_getApiClient) |  | Возвращает CURL клиента для работы с API |
 | public | [getConfig()](../classes/YooKassa-Client-BaseClient.md#method_getConfig) |  | Возвращает настройки клиента |
 | public | [getDealInfo()](../classes/YooKassa-Client.md#method_getDealInfo) |  | Получить информацию о сделке |
@@ -72,10 +77,13 @@ $client->setAuthToken('token_XXXXXXX');
 | public | [getPaymentInfo()](../classes/YooKassa-Client.md#method_getPaymentInfo) |  | Получить информацию о платеже |
 | public | [getPayments()](../classes/YooKassa-Client.md#method_getPayments) |  | Получить список платежей магазина |
 | public | [getPayoutInfo()](../classes/YooKassa-Client.md#method_getPayoutInfo) |  | Получить информацию о выплате |
+| public | [getPersonalDataInfo()](../classes/YooKassa-Client.md#method_getPersonalDataInfo) |  | Получить информацию о персональных данных |
 | public | [getReceiptInfo()](../classes/YooKassa-Client.md#method_getReceiptInfo) |  | Получить информацию о чеке |
 | public | [getReceipts()](../classes/YooKassa-Client.md#method_getReceipts) |  | Получить список чеков магазина |
 | public | [getRefundInfo()](../classes/YooKassa-Client.md#method_getRefundInfo) |  | Получить информацию о возврате |
 | public | [getRefunds()](../classes/YooKassa-Client.md#method_getRefunds) |  | Получить список возвратов платежей |
+| public | [getSbpBanks()](../classes/YooKassa-Client.md#method_getSbpBanks) |  | Получить список участников СБП |
+| public | [getSelfEmployedInfo()](../classes/YooKassa-Client.md#method_getSelfEmployedInfo) |  | Получить информацию о самозанятом |
 | public | [getWebhooks()](../classes/YooKassa-Client.md#method_getWebhooks) |  | Список созданных Webhook |
 | public | [isNotificationIPTrusted()](../classes/YooKassa-Client-BaseClient.md#method_isNotificationIPTrusted) |  | Метод проверяет, находится ли IP адрес среди IP адресов Юkassa, с которых отправляются уведомления |
 | public | [me()](../classes/YooKassa-Client.md#method_me) |  | Информация о магазине |
@@ -186,6 +194,39 @@ PAYOUTS_PATH = '/payouts'
 ```
 
 
+<a name="constant_PERSONAL_DATA_PATH" class="anchor"></a>
+###### PERSONAL_DATA_PATH
+Inherited from [\YooKassa\Client\BaseClient](../classes/YooKassa-Client-BaseClient.md)
+
+Точка входа для запросов к API по персональным данным
+
+```php
+PERSONAL_DATA_PATH = '/personal_data'
+```
+
+
+<a name="constant_SBP_BANKS_PATH" class="anchor"></a>
+###### SBP_BANKS_PATH
+Inherited from [\YooKassa\Client\BaseClient](../classes/YooKassa-Client-BaseClient.md)
+
+Точка входа для запросов к API по участникам СБП
+
+```php
+SBP_BANKS_PATH = '/sbp_banks'
+```
+
+
+<a name="constant_SELF_EMPLOYED_PATH" class="anchor"></a>
+###### SELF_EMPLOYED_PATH
+Inherited from [\YooKassa\Client\BaseClient](../classes/YooKassa-Client-BaseClient.md)
+
+Точка входа для запросов к API по самозанятым
+
+```php
+SELF_EMPLOYED_PATH = '/self_employed'
+```
+
+
 <a name="constant_IDEMPOTENCY_KEY_HEADER" class="anchor"></a>
 ###### IDEMPOTENCY_KEY_HEADER
 Inherited from [\YooKassa\Client\BaseClient](../classes/YooKassa-Client-BaseClient.md)
@@ -235,7 +276,7 @@ DEFAULT_ATTEMPTS_COUNT = 3
 Текущая версия библиотеки
 
 ```php
-SDK_VERSION = '2.3.0'
+SDK_VERSION = '2.9.1'
 ```
 
 
@@ -412,6 +453,7 @@ public addWebhook(\YooKassa\Model\Webhook\Webhook|array $request, string|null $i
 ```php
 // В данном примере мы устанавливаем вебхуки для succeeded и canceled уведомлений.
 // А так же проверяем, не установлены ли уже вебхуки. И если установлены на неверный адрес, удаляем.
+$client->setAuthToken('token_XXXXXXX');
 try {
     $webHookUrl = 'https://merchant-site.ru/payment-notification';
     $needWebHookList = array(
@@ -611,12 +653,13 @@ public createDeal(\YooKassa\Request\Deals\CreateDealRequestInterface|array $deal
 Необходимо указать следующие параметры:
 <ul>
 <li>type — Тип сделки. Фиксированное значение: safe_deal — Безопасная сделка;</li>
-<li>fee_moment — Момент перечисления вам вознаграждения платформы. Возможные значения: payment_succeeded — после успешной оплаты; deal_closed — при закрытии сделки после успешной выплаты.</li>
+<li>fee_moment — Момент перечисления вам вознаграждения платформы. Возможные значения: payment_succeeded — после успешной оплаты;</li>
+<li>deal_closed — при закрытии сделки после успешной выплаты.</li>
 </ul>
 
 Дополнительные параметры:
 <ul>
-<li>metadata — Любые дополнительные данные, которые нужны вам для работы (например, номер заказа);</li>
+<li>metadata — Любые дополнительные данные, которые нужны вам для работы (например, ваш внутренний идентификатор заказа);</li>
 <li>description — Описание сделки (не более 128 символов). Используется для фильтрации при получении списка сделок.</li>
 </ul>
 
@@ -792,7 +835,7 @@ public createPayout(\YooKassa\Request\Payouts\CreatePayoutRequestInterface|array
 <ul>
 <li>description — описание транзакции (не более 128 символов);</li>
 <li>deal — сделка, в рамках которой нужно провести выплату. Необходимо передавать, если вы проводите Безопасную сделку;</li>
-<li>metadata — любые дополнительные данные, которые нужны вам для работы (например, номер заказа).</li>
+<li>metadata — любые дополнительные данные, которые нужны вам для работы (например, ваш внутренний идентификатор заказа).</li>
 </ul>
 
 **Details:**
@@ -822,6 +865,7 @@ public createPayout(\YooKassa\Request\Payouts\CreatePayoutRequestInterface|array
 Запрос на создание выплаты:
 
 ```php
+// Создание выплаты
 $request = array(
     'amount' => array(
         'value' => '80.00',
@@ -842,8 +886,73 @@ $request = array(
 $idempotenceKey = uniqid('', true);
 try {
     $idempotenceKey = uniqid('', true);
-    $result = $client->createPayout($request, $idempotenceKey
-    );
+    $result = $client->createPayout($request, $idempotenceKey);
+} catch (\Exception $e) {
+    $result = $e;
+}
+
+var_dump($result);
+
+```
+
+
+<a name="method_createPersonalData" class="anchor"></a>
+#### public createPersonalData() : \YooKassa\Request\PersonalData\PersonalDataResponse|null
+
+```php
+public createPersonalData(\YooKassa\Request\PersonalData\CreatePersonalDataRequestInterface|array $request, string|null $idempotencyKey = null) : \YooKassa\Request\PersonalData\PersonalDataResponse|null
+```
+
+**Summary**
+
+Создание персональных данных
+
+**Description**
+
+Используйте этот запрос, чтобы создать в ЮKassa [объект персональных данных](#personal_data_object).
+В запросе необходимо передать фамилию, имя, отчество пользователя и указать, с какой целью эти данные будут использоваться.
+Идентификатор созданного объекта персональных данных необходимо использовать в запросе на проведение выплаты через СБП с проверкой получателя.
+[Подробнее о выплатах с проверкой получателя](/developers/payouts/scenario-extensions/recipient-check)
+
+**Details:**
+* Inherited From: [\YooKassa\Client](../classes/YooKassa-Client.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">\YooKassa\Request\PersonalData\CreatePersonalDataRequestInterface OR array</code> | request  |  |
+| <code lang="php">string OR null</code> | idempotencyKey  | [Ключ идемпотентности](https://yookassa.ru/developers/using-api/basics?lang=php#idempotence) |
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \YooKassa\Common\Exceptions\ApiException | Неожиданный код ошибки. |
+| \YooKassa\Common\Exceptions\BadApiRequestException | Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API. |
+| \YooKassa\Common\Exceptions\ForbiddenException | Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции. |
+| \YooKassa\Common\Exceptions\InternalServerError | Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности. |
+| \YooKassa\Common\Exceptions\NotFoundException | Ресурс не найден. |
+| \YooKassa\Common\Exceptions\ResponseProcessingException | Запрос был принят на обработку, но она не завершена. |
+| \YooKassa\Common\Exceptions\TooManyRequestsException | Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов. |
+| \YooKassa\Common\Exceptions\UnauthorizedException | Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации. |
+| \YooKassa\Common\Exceptions\ExtensionNotFoundException | Требуемое PHP расширение не установлено. |
+| \Exception |  |
+
+**Returns:** \YooKassa\Request\PersonalData\PersonalDataResponse|null - Объект персональных данных
+##### Examples:
+Запрос на создание персональных данных:
+
+```php
+$request = array(
+    'type' => 'sbp_payout_recipient',
+    'last_name' => 'Иванов',
+    'first_name' => 'Иван',
+    'middle_name' => 'Иванович',
+    'metadata' => array('recipient_id' => '37'),
+);
+$idempotenceKey = uniqid('', true);
+try {
+    $idempotenceKey = uniqid('', true);
+    $result = $client->createPersonalData($request, $idempotenceKey);
 } catch (\Exception $e) {
     $result = $e;
 }
@@ -1011,6 +1120,71 @@ var_dump($response);
 ```
 
 
+<a name="method_createSelfEmployed" class="anchor"></a>
+#### public createSelfEmployed() : \YooKassa\Request\SelfEmployed\SelfEmployedResponse|null
+
+```php
+public createSelfEmployed(\YooKassa\Request\SelfEmployed\SelfEmployedRequest|array $selfEmployed, string|null $idempotenceKey = null) : \YooKassa\Request\SelfEmployed\SelfEmployedResponse|null
+```
+
+**Summary**
+
+Создание самозанятого.
+
+**Description**
+
+Используйте этот запрос, чтобы создать в ЮKassa [объект самозанятого](https://yookassa.ru/developers/api?codeLang=bash#self_employed_object).
+
+В запросе необходимо передать ИНН или телефон самозанятого для идентификации в сервисе Мой налог,
+сценарий подтверждения пользователем заявки ЮMoney на получение прав для регистрации чеков и описание самозанятого.
+
+Идентификатор созданного объекта самозанятого необходимо использовать в запросе на проведение выплаты.
+
+**Details:**
+* Inherited From: [\YooKassa\Client](../classes/YooKassa-Client.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">\YooKassa\Request\SelfEmployed\SelfEmployedRequest OR array</code> | selfEmployed  |  |
+| <code lang="php">string OR null</code> | idempotenceKey  | [Ключ идемпотентности](https://yookassa.ru/developers/using-api/basics?lang=php#idempotence) |
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \YooKassa\Common\Exceptions\ApiException | Неожиданный код ошибки. |
+| \YooKassa\Common\Exceptions\BadApiRequestException | Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API. |
+| \YooKassa\Common\Exceptions\ForbiddenException | Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции. |
+| \YooKassa\Common\Exceptions\InternalServerError | Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности. |
+| \YooKassa\Common\Exceptions\NotFoundException | Ресурс не найден. |
+| \YooKassa\Common\Exceptions\ResponseProcessingException | Запрос был принят на обработку, но она не завершена. |
+| \YooKassa\Common\Exceptions\TooManyRequestsException | Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов. |
+| \YooKassa\Common\Exceptions\UnauthorizedException | Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации. |
+| \YooKassa\Common\Exceptions\ExtensionNotFoundException | Требуемое PHP расширение не установлено. |
+
+**Returns:** \YooKassa\Request\SelfEmployed\SelfEmployedResponse|null - 
+##### Examples:
+Запрос на создание самозанятого:
+
+```php
+$request = array(
+    'itn' => '123456789012',
+    'phone' => '79001002030',
+    'confirmation' => array('type' => 'redirect'),
+);
+$idempotenceKey = uniqid('', true);
+try {
+    $idempotenceKey = uniqid('', true);
+    $result = $client->createSelfEmployed($request, $idempotenceKey);
+} catch (\Exception $e) {
+    $result = $e;
+}
+
+var_dump($result);
+
+```
+
+
 <a name="method_getApiClient" class="anchor"></a>
 #### public getApiClient() : \YooKassa\Client\ApiClientInterface
 
@@ -1087,14 +1261,14 @@ public getDealInfo(string $dealId) : \YooKassa\Model\DealInterface|null
 Получить информацию о сделке:
 
 ```php
-
-// Получить информацию о сделке
 try {
     $response = $client->getDealInfo('dl-2909e77d-1022-5003-8004-0c37205b3208');
     echo $response->getStatus();
 } catch (\Exception $e) {
     $response = $e;
 }
+
+var_dump($response);
 
 ```
 
@@ -1145,8 +1319,6 @@ public getDeals(\YooKassa\Request\Deals\DealsRequestInterface|array|null $filter
 Получить список сделок с фильтрацией:
 
 ```php
-
-// Получить список сделок с фильтрацией
 $cursor = null;
 $params = array(
     'limit' => 30,
@@ -1172,6 +1344,8 @@ try {
     } while ($cursor = $deals->getNextCursor());
 } catch (\Exception $e) {
     $response = $e;
+    var_dump($response);
+}
 
 ```
 
@@ -1348,6 +1522,60 @@ public getPayoutInfo(string $payoutId) : \YooKassa\Model\PayoutInterface|null
 $payoutId = 'po-285c0ab7-0003-5000-9000-0e1166498fda';
 try {
     $response = $client->getPayoutInfo($payoutId);
+} catch (\Exception $e) {
+    $response = $e;
+}
+
+var_dump($response);
+
+```
+
+
+<a name="method_getPersonalDataInfo" class="anchor"></a>
+#### public getPersonalDataInfo() : \YooKassa\Model\PersonalData\PersonalDataInterface|null
+
+```php
+public getPersonalDataInfo(string $personalDataId) : \YooKassa\Model\PersonalData\PersonalDataInterface|null
+```
+
+**Summary**
+
+Получить информацию о персональных данных
+
+**Description**
+
+Запрос позволяет получить информацию о текущем состоянии персональных данных по их уникальному идентификатору.
+Выдает объект платежа {@link} в актуальном статусе.
+
+**Details:**
+* Inherited From: [\YooKassa\Client](../classes/YooKassa-Client.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | personalDataId  | Идентификатор персональных данных |
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \YooKassa\Common\Exceptions\ApiException | Неожиданный код ошибки. |
+| \YooKassa\Common\Exceptions\BadApiRequestException | Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API. |
+| \YooKassa\Common\Exceptions\ForbiddenException | Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции. |
+| \YooKassa\Common\Exceptions\InternalServerError | Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности. |
+| \YooKassa\Common\Exceptions\NotFoundException | Ресурс не найден. |
+| \YooKassa\Common\Exceptions\ResponseProcessingException | Запрос был принят на обработку, но она не завершена. |
+| \YooKassa\Common\Exceptions\TooManyRequestsException | Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов. |
+| \YooKassa\Common\Exceptions\UnauthorizedException | Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации. |
+| \YooKassa\Common\Exceptions\ExtensionNotFoundException | Требуемое PHP расширение не установлено. |
+
+**Returns:** \YooKassa\Model\PersonalData\PersonalDataInterface|null - Объект персональных данных
+##### Examples:
+Получить информацию о персональных данных:
+
+```php
+$payoutId = 'pd-285c0ab7-0003-5000-9000-0e1166498fda';
+try {
+    $response = $client->getPersonalDataInfo($payoutId);
 } catch (\Exception $e) {
     $response = $e;
 }
@@ -1611,6 +1839,108 @@ var_dump($response);
 ```
 
 
+<a name="method_getSbpBanks" class="anchor"></a>
+#### public getSbpBanks() : \YooKassa\Request\Payouts\SbpBanksResponse|null
+
+```php
+public getSbpBanks() : \YooKassa\Request\Payouts\SbpBanksResponse|null
+```
+
+**Summary**
+
+Получить список участников СБП
+
+**Description**
+
+С помощью этого запроса вы можете получить актуальный список всех участников СБП.
+Список нужно вывести получателю выплаты, идентификатор выбранного участника СБП необходимо использовать
+в запросе на создание выплаты.
+
+**Details:**
+* Inherited From: [\YooKassa\Client](../classes/YooKassa-Client.md)
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \YooKassa\Common\Exceptions\ApiException | Неожиданный код ошибки. |
+| \YooKassa\Common\Exceptions\BadApiRequestException | Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API. |
+| \YooKassa\Common\Exceptions\ForbiddenException | Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции. |
+| \YooKassa\Common\Exceptions\InternalServerError | Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности. |
+| \YooKassa\Common\Exceptions\NotFoundException | Ресурс не найден. |
+| \YooKassa\Common\Exceptions\ResponseProcessingException | Запрос был принят на обработку, но она не завершена. |
+| \YooKassa\Common\Exceptions\TooManyRequestsException | Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов. |
+| \YooKassa\Common\Exceptions\UnauthorizedException | Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации. |
+| \YooKassa\Common\Exceptions\ExtensionNotFoundException | Требуемое PHP расширение не установлено. |
+
+**Returns:** \YooKassa\Request\Payouts\SbpBanksResponse|null - 
+##### Examples:
+Получить информацию о персональных данных:
+
+```php
+$payoutId = 'pd-285c0ab7-0003-5000-9000-0e1166498fda';
+try {
+    $response = $client->getPersonalDataInfo($payoutId);
+} catch (\Exception $e) {
+    $response = $e;
+}
+
+
+```
+
+
+<a name="method_getSelfEmployedInfo" class="anchor"></a>
+#### public getSelfEmployedInfo() : \YooKassa\Model\SelfEmployed\SelfEmployedInterface|null
+
+```php
+public getSelfEmployedInfo(string $selfEmployedId) : \YooKassa\Model\SelfEmployed\SelfEmployedInterface|null
+```
+
+**Summary**
+
+Получить информацию о самозанятом
+
+**Description**
+
+С помощью этого запроса вы можете получить информацию о текущем статусе самозанятого по его уникальному идентификатору.
+
+**Details:**
+* Inherited From: [\YooKassa\Client](../classes/YooKassa-Client.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | selfEmployedId  | Идентификатор самозанятого |
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \YooKassa\Common\Exceptions\ApiException | Неожиданный код ошибки. |
+| \YooKassa\Common\Exceptions\BadApiRequestException | Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API. |
+| \YooKassa\Common\Exceptions\ForbiddenException | Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции. |
+| \YooKassa\Common\Exceptions\InternalServerError | Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности. |
+| \YooKassa\Common\Exceptions\NotFoundException | Ресурс не найден. |
+| \YooKassa\Common\Exceptions\ResponseProcessingException | Запрос был принят на обработку, но она не завершена. |
+| \YooKassa\Common\Exceptions\TooManyRequestsException | Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов. |
+| \YooKassa\Common\Exceptions\UnauthorizedException | Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации. |
+| \YooKassa\Common\Exceptions\ExtensionNotFoundException | Требуемое PHP расширение не установлено. |
+
+**Returns:** \YooKassa\Model\SelfEmployed\SelfEmployedInterface|null - Объект информации о самозанятом
+##### Examples:
+Получить информацию о самозанятом:
+
+```php
+$payoutId = 'se-285c0ab7-0003-5000-9000-0e1166498fda';
+try {
+    $response = $client->getSelfEmployedInfo($payoutId);
+} catch (\Exception $e) {
+    $response = $e;
+}
+
+var_dump($response);
+
+```
+
+
 <a name="method_getWebhooks" class="anchor"></a>
 #### public getWebhooks() : \YooKassa\Request\Webhook\WebhookListResponse|null
 
@@ -1650,6 +1980,7 @@ public getWebhooks() : \YooKassa\Request\Webhook\WebhookListResponse|null
 ```php
 // В данном примере мы устанавливаем вебхуки для succeeded и canceled уведомлений.
 // А так же проверяем, не установлены ли уже вебхуки. И если установлены на неверный адрес, удаляем.
+$client->setAuthToken('token_XXXXXXX');
 try {
     $webHookUrl = 'https://merchant-site.ru/payment-notification';
     $needWebHookList = array(
@@ -1701,12 +2032,12 @@ public isNotificationIPTrusted(string $ip) : bool
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">string</code> | ip  | - IPv4 или IPv6 адрес webhook уведомления |
+| <code lang="php">string</code> | ip  | IPv4 или IPv6 адрес webhook уведомления |
 
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
-| \Exception | - исключение будет выброшено, если будет передан IP адрес неверного формата |
+| \Exception | Выбрасывается, если будет передан IP адрес неверного формата |
 
 **Returns:** bool - 
 
@@ -1810,6 +2141,7 @@ public removeWebhook(string $webhookId, string|null $idempotencyKey = null) : \Y
 ```php
 // В данном примере мы устанавливаем вебхуки для succeeded и canceled уведомлений.
 // А так же проверяем, не установлены ли уже вебхуки. И если установлены на неверный адрес, удаляем.
+$client->setAuthToken('token_XXXXXXX');
 try {
     $webHookUrl = 'https://merchant-site.ru/payment-notification';
     $needWebHookList = array(
@@ -2030,9 +2362,9 @@ protected decodeData(\YooKassa\Common\ResponseObject $response) : array
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">\YooKassa\Common\ResponseObject</code> | response  |  |
+| <code lang="php">\YooKassa\Common\ResponseObject</code> | response  | Объект ответа на запрос к API |
 
-**Returns:** array - 
+**Returns:** array - Массив данных
 
 
 <a name="method_delay" class="anchor"></a>
@@ -2052,7 +2384,7 @@ protected delay(\YooKassa\Common\ResponseObject $response) : mixed
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">\YooKassa\Common\ResponseObject</code> | response  |  |
+| <code lang="php">\YooKassa\Common\ResponseObject</code> | response  | Объект ответа на запрос к API |
 
 **Returns:** mixed - 
 
@@ -2074,21 +2406,21 @@ protected encodeData(array $serializedData) : string
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">array</code> | serializedData  |  |
+| <code lang="php">array</code> | serializedData  | Массив данных для кодировки |
 
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
-| \Exception |  |
+| \Exception | Выбрасывается, если не удалось конвертировать данные в строку JSON |
 
-**Returns:** string - 
+**Returns:** string - Строка JSON
 
 
 <a name="method_execute" class="anchor"></a>
 #### protected execute() : mixed|\YooKassa\Common\ResponseObject
 
 ```php
-protected execute(string $path, string $method, array $queryParams, null $httpBody = null, array $headers = array()) : mixed|\YooKassa\Common\ResponseObject
+protected execute(string $path, string $method, array $queryParams, string|null $httpBody = null, array $headers = array()) : mixed|\YooKassa\Common\ResponseObject
 ```
 
 **Summary**
@@ -2101,11 +2433,11 @@ protected execute(string $path, string $method, array $queryParams, null $httpBo
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">string</code> | path  |  |
-| <code lang="php">string</code> | method  |  |
-| <code lang="php">array</code> | queryParams  |  |
-| <code lang="php">null</code> | httpBody  |  |
-| <code lang="php">array</code> | headers  |  |
+| <code lang="php">string</code> | path  | URL запроса |
+| <code lang="php">string</code> | method  | HTTP метод |
+| <code lang="php">array</code> | queryParams  | Массив GET параметров запроса |
+| <code lang="php">string OR null</code> | httpBody  | Тело запроса |
+| <code lang="php">array</code> | headers  | Массив заголовков запроса |
 
 ##### Throws:
 | Type | Description |
@@ -2140,14 +2472,15 @@ protected handleError(\YooKassa\Common\ResponseObject $response) : mixed
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
-| \YooKassa\Common\Exceptions\ApiException |  |
-| \YooKassa\Common\Exceptions\BadApiRequestException |  |
-| \YooKassa\Common\Exceptions\ForbiddenException |  |
-| \YooKassa\Common\Exceptions\InternalServerError |  |
-| \YooKassa\Common\Exceptions\NotFoundException |  |
-| \YooKassa\Common\Exceptions\ResponseProcessingException |  |
-| \YooKassa\Common\Exceptions\TooManyRequestsException |  |
-| \YooKassa\Common\Exceptions\UnauthorizedException |  |
+| \YooKassa\Common\Exceptions\ApiException | Неожиданный код ошибки. |
+| \YooKassa\Common\Exceptions\BadApiRequestException | Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API. |
+| \YooKassa\Common\Exceptions\ForbiddenException | Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции. |
+| \YooKassa\Common\Exceptions\InternalServerError | Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности. |
+| \YooKassa\Common\Exceptions\NotFoundException | Ресурс не найден. |
+| \YooKassa\Common\Exceptions\ResponseProcessingException | Запрос был принят на обработку, но она не завершена. |
+| \YooKassa\Common\Exceptions\TooManyRequestsException | Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов. |
+| \YooKassa\Common\Exceptions\UnauthorizedException | Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации. |
+| \YooKassa\Common\Exceptions\AuthorizeException | Ошибка авторизации. Не установлен заголовок. |
 
 **Returns:** mixed - 
 
@@ -2163,11 +2496,11 @@ protected handleError(\YooKassa\Common\ResponseObject $response) : mixed
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

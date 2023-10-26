@@ -6,18 +6,19 @@
 **Summary:**
 
 Locale - Язык интерфейса, писем и смс, которые будет видеть или получать пользователь
-|Код|Описание|
---- | ---
-|ru_RU|Русский|
-|en_US|English|
 
+**Description:**
+
+Возможные значения:
+- `ru_RU` - Русский
+- `en_US` - English
 
 ---
 ### Constants
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
-| public | [RUSSIAN](../classes/YooKassa-Model-Locale.md#constant_RUSSIAN) |  |  |
-| public | [ENGLISH](../classes/YooKassa-Model-Locale.md#constant_ENGLISH) |  |  |
+| public | [RUSSIAN](../classes/YooKassa-Model-Locale.md#constant_RUSSIAN) |  | Русский |
+| public | [ENGLISH](../classes/YooKassa-Model-Locale.md#constant_ENGLISH) |  | English |
 
 ---
 ### Properties
@@ -45,6 +46,8 @@ Locale - Язык интерфейса, писем и смс, которые б�
 ## Constants
 <a name="constant_RUSSIAN" class="anchor"></a>
 ###### RUSSIAN
+Русский
+
 ```php
 RUSSIAN = 'ru_RU'
 ```
@@ -52,6 +55,8 @@ RUSSIAN = 'ru_RU'
 
 <a name="constant_ENGLISH" class="anchor"></a>
 ###### ENGLISH
+English
+
 ```php
 ENGLISH = 'en_US'
 ```
@@ -138,11 +143,11 @@ Static public valueExists(mixed $value) : bool
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

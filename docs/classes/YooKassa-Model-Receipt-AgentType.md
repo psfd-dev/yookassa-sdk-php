@@ -5,20 +5,34 @@
 ---
 **Summary:**
 
-Базовый класс генерируемых enum'ов
+AgentType - Тип посредника
 
+**Description:**
+
+Тип посредника передается в запросе на создание чека в массиве `items`, в параметре `agent_type`,
+если вы отправляете данные для формирования чека по сценарию Сначала платеж, потом чек.
+Параметр `agent_type` нужно передавать, начиная с ФФД 1.1. Убедитесь, что ваша онлайн-касса обновлена до этой версии.
+
+Возможные значения:
+- `banking_payment_agent` - Безналичный расчет
+- `banking_payment_subagent` - Предоплата (аванс)
+- `payment_agent` - Постоплата (кредит)
+- `payment_subagent` - Встречное предоставление
+- `attorney` - Встречное предоставление
+- `commissioner` - Встречное предоставление
+- `agent` - Встречное предоставление
 
 ---
 ### Constants
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
-| public | [BANKING_PAYMENT_AGENT](../classes/YooKassa-Model-Receipt-AgentType.md#constant_BANKING_PAYMENT_AGENT) |  |  |
-| public | [BANKING_PAYMENT_SUBAGENT](../classes/YooKassa-Model-Receipt-AgentType.md#constant_BANKING_PAYMENT_SUBAGENT) |  |  |
-| public | [PAYMENT_AGENT](../classes/YooKassa-Model-Receipt-AgentType.md#constant_PAYMENT_AGENT) |  |  |
-| public | [PAYMENT_SUBAGENT](../classes/YooKassa-Model-Receipt-AgentType.md#constant_PAYMENT_SUBAGENT) |  |  |
-| public | [ATTORNEY](../classes/YooKassa-Model-Receipt-AgentType.md#constant_ATTORNEY) |  |  |
-| public | [COMMISSIONER](../classes/YooKassa-Model-Receipt-AgentType.md#constant_COMMISSIONER) |  |  |
-| public | [AGENT](../classes/YooKassa-Model-Receipt-AgentType.md#constant_AGENT) |  |  |
+| public | [BANKING_PAYMENT_AGENT](../classes/YooKassa-Model-Receipt-AgentType.md#constant_BANKING_PAYMENT_AGENT) |  | Банковский платежный агент |
+| public | [BANKING_PAYMENT_SUBAGENT](../classes/YooKassa-Model-Receipt-AgentType.md#constant_BANKING_PAYMENT_SUBAGENT) |  | Банковский платежный субагент |
+| public | [PAYMENT_AGENT](../classes/YooKassa-Model-Receipt-AgentType.md#constant_PAYMENT_AGENT) |  | Платежный агент |
+| public | [PAYMENT_SUBAGENT](../classes/YooKassa-Model-Receipt-AgentType.md#constant_PAYMENT_SUBAGENT) |  | Платежный субагент |
+| public | [ATTORNEY](../classes/YooKassa-Model-Receipt-AgentType.md#constant_ATTORNEY) |  | Поверенный |
+| public | [COMMISSIONER](../classes/YooKassa-Model-Receipt-AgentType.md#constant_COMMISSIONER) |  | Комиссионер |
+| public | [AGENT](../classes/YooKassa-Model-Receipt-AgentType.md#constant_AGENT) |  | Агент |
 
 ---
 ### Properties
@@ -46,6 +60,8 @@
 ## Constants
 <a name="constant_BANKING_PAYMENT_AGENT" class="anchor"></a>
 ###### BANKING_PAYMENT_AGENT
+Банковский платежный агент
+
 ```php
 BANKING_PAYMENT_AGENT = 'banking_payment_agent'
 ```
@@ -53,6 +69,8 @@ BANKING_PAYMENT_AGENT = 'banking_payment_agent'
 
 <a name="constant_BANKING_PAYMENT_SUBAGENT" class="anchor"></a>
 ###### BANKING_PAYMENT_SUBAGENT
+Банковский платежный субагент
+
 ```php
 BANKING_PAYMENT_SUBAGENT = 'banking_payment_subagent'
 ```
@@ -60,6 +78,8 @@ BANKING_PAYMENT_SUBAGENT = 'banking_payment_subagent'
 
 <a name="constant_PAYMENT_AGENT" class="anchor"></a>
 ###### PAYMENT_AGENT
+Платежный агент
+
 ```php
 PAYMENT_AGENT = 'payment_agent'
 ```
@@ -67,6 +87,8 @@ PAYMENT_AGENT = 'payment_agent'
 
 <a name="constant_PAYMENT_SUBAGENT" class="anchor"></a>
 ###### PAYMENT_SUBAGENT
+Платежный субагент
+
 ```php
 PAYMENT_SUBAGENT = 'payment_subagent'
 ```
@@ -74,6 +96,8 @@ PAYMENT_SUBAGENT = 'payment_subagent'
 
 <a name="constant_ATTORNEY" class="anchor"></a>
 ###### ATTORNEY
+Поверенный
+
 ```php
 ATTORNEY = 'attorney'
 ```
@@ -81,6 +105,8 @@ ATTORNEY = 'attorney'
 
 <a name="constant_COMMISSIONER" class="anchor"></a>
 ###### COMMISSIONER
+Комиссионер
+
 ```php
 COMMISSIONER = 'commissioner'
 ```
@@ -88,6 +114,8 @@ COMMISSIONER = 'commissioner'
 
 <a name="constant_AGENT" class="anchor"></a>
 ###### AGENT
+Агент
+
 ```php
 AGENT = 'agent'
 ```
@@ -174,11 +202,11 @@ Static public valueExists(mixed $value) : bool
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

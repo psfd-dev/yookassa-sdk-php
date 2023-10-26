@@ -5,20 +5,20 @@
 ---
 **Summary:**
 
-Базовый класс генерируемых enum'ов
+Признак способа расчета передается в параметре `payment_mode`.
 
 
 ---
 ### Constants
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
-| public | [FULL_PREPAYMENT](../classes/YooKassa-Model-Receipt-PaymentMode.md#constant_FULL_PREPAYMENT) |  |  |
-| public | [PARTIAL_PREPAYMENT](../classes/YooKassa-Model-Receipt-PaymentMode.md#constant_PARTIAL_PREPAYMENT) |  |  |
-| public | [ADVANCE](../classes/YooKassa-Model-Receipt-PaymentMode.md#constant_ADVANCE) |  |  |
-| public | [FULL_PAYMENT](../classes/YooKassa-Model-Receipt-PaymentMode.md#constant_FULL_PAYMENT) |  |  |
-| public | [PARTIAL_PAYMENT](../classes/YooKassa-Model-Receipt-PaymentMode.md#constant_PARTIAL_PAYMENT) |  |  |
-| public | [CREDIT](../classes/YooKassa-Model-Receipt-PaymentMode.md#constant_CREDIT) |  |  |
-| public | [CREDIT_PAYMENT](../classes/YooKassa-Model-Receipt-PaymentMode.md#constant_CREDIT_PAYMENT) |  |  |
+| public | [FULL_PREPAYMENT](../classes/YooKassa-Model-Receipt-PaymentMode.md#constant_FULL_PREPAYMENT) |  | Полная предоплата |
+| public | [PARTIAL_PREPAYMENT](../classes/YooKassa-Model-Receipt-PaymentMode.md#constant_PARTIAL_PREPAYMENT) |  | Частичная предоплата |
+| public | [ADVANCE](../classes/YooKassa-Model-Receipt-PaymentMode.md#constant_ADVANCE) |  | Аванс |
+| public | [FULL_PAYMENT](../classes/YooKassa-Model-Receipt-PaymentMode.md#constant_FULL_PAYMENT) |  | Полный расчет |
+| public | [PARTIAL_PAYMENT](../classes/YooKassa-Model-Receipt-PaymentMode.md#constant_PARTIAL_PAYMENT) |  | Частичный расчет и кредит |
+| public | [CREDIT](../classes/YooKassa-Model-Receipt-PaymentMode.md#constant_CREDIT) |  | Кредит |
+| public | [CREDIT_PAYMENT](../classes/YooKassa-Model-Receipt-PaymentMode.md#constant_CREDIT_PAYMENT) |  | Выплата по кредиту |
 
 ---
 ### Properties
@@ -46,6 +46,8 @@
 ## Constants
 <a name="constant_FULL_PREPAYMENT" class="anchor"></a>
 ###### FULL_PREPAYMENT
+Полная предоплата
+
 ```php
 FULL_PREPAYMENT = 'full_prepayment'
 ```
@@ -53,6 +55,8 @@ FULL_PREPAYMENT = 'full_prepayment'
 
 <a name="constant_PARTIAL_PREPAYMENT" class="anchor"></a>
 ###### PARTIAL_PREPAYMENT
+Частичная предоплата
+
 ```php
 PARTIAL_PREPAYMENT = 'partial_prepayment'
 ```
@@ -60,6 +64,8 @@ PARTIAL_PREPAYMENT = 'partial_prepayment'
 
 <a name="constant_ADVANCE" class="anchor"></a>
 ###### ADVANCE
+Аванс
+
 ```php
 ADVANCE = 'advance'
 ```
@@ -67,6 +73,8 @@ ADVANCE = 'advance'
 
 <a name="constant_FULL_PAYMENT" class="anchor"></a>
 ###### FULL_PAYMENT
+Полный расчет
+
 ```php
 FULL_PAYMENT = 'full_payment'
 ```
@@ -74,6 +82,8 @@ FULL_PAYMENT = 'full_payment'
 
 <a name="constant_PARTIAL_PAYMENT" class="anchor"></a>
 ###### PARTIAL_PAYMENT
+Частичный расчет и кредит
+
 ```php
 PARTIAL_PAYMENT = 'partial_payment'
 ```
@@ -81,6 +91,8 @@ PARTIAL_PAYMENT = 'partial_payment'
 
 <a name="constant_CREDIT" class="anchor"></a>
 ###### CREDIT
+Кредит
+
 ```php
 CREDIT = 'credit'
 ```
@@ -88,6 +100,8 @@ CREDIT = 'credit'
 
 <a name="constant_CREDIT_PAYMENT" class="anchor"></a>
 ###### CREDIT_PAYMENT
+Выплата по кредиту
+
 ```php
 CREDIT_PAYMENT = 'credit_payment'
 ```
@@ -174,11 +188,11 @@ Static public valueExists(mixed $value) : bool
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

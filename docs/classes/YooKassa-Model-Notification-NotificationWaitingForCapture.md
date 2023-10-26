@@ -83,12 +83,10 @@ try {
         header('HTTP/1.1 400 Something went wrong');
         exit();
     }
-
 } catch (Exception $e) {
     header('HTTP/1.1 400 Something went wrong');
     exit();
 }
-
 
 ```
 
@@ -123,9 +121,9 @@ try {
 | public | [offsetSet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetSet) |  | Устанавливает значение свойства |
 | public | [offsetUnset()](../classes/YooKassa-Common-AbstractObject.md#method_offsetUnset) |  | Удаляет свойство |
 | public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
-| protected | [_setEvent()](../classes/YooKassa-Model-Notification-AbstractNotification.md#method__setEvent) |  | Устанавливает тип события |
-| protected | [_setType()](../classes/YooKassa-Model-Notification-AbstractNotification.md#method__setType) |  | Устанавливает тип уведомления |
 | protected | [getUnknownProperties()](../classes/YooKassa-Common-AbstractObject.md#method_getUnknownProperties) |  | Возвращает массив свойств которые не существуют, но были заданы у объекта |
+| protected | [setEvent()](../classes/YooKassa-Model-Notification-AbstractNotification.md#method_setEvent) |  | Устанавливает тип события |
+| protected | [setType()](../classes/YooKassa-Model-Notification-AbstractNotification.md#method_setType) |  | Устанавливает тип уведомления |
 
 ---
 ### Details
@@ -450,10 +448,10 @@ public offsetGet(string $offset) : mixed
 
 
 <a name="method_offsetSet" class="anchor"></a>
-#### public offsetSet() : mixed
+#### public offsetSet() : void
 
 ```php
-public offsetSet(string $offset, mixed $value) : mixed
+public offsetSet(string $offset, mixed $value) : void
 ```
 
 **Summary**
@@ -469,14 +467,14 @@ public offsetSet(string $offset, mixed $value) : mixed
 | <code lang="php">string</code> | offset  | Имя свойства |
 | <code lang="php">mixed</code> | value  | Значение свойства |
 
-**Returns:** mixed - 
+**Returns:** void - 
 
 
 <a name="method_offsetUnset" class="anchor"></a>
-#### public offsetUnset() : mixed
+#### public offsetUnset() : void
 
 ```php
-public offsetUnset(string $offset) : mixed
+public offsetUnset(string $offset) : void
 ```
 
 **Summary**
@@ -491,7 +489,7 @@ public offsetUnset(string $offset) : mixed
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | offset  | Имя удаляемого свойства |
 
-**Returns:** mixed - 
+**Returns:** void - 
 
 
 <a name="method_toArray" class="anchor"></a>
@@ -512,11 +510,28 @@ public toArray() : array
 **Returns:** array - Ассоциативный массив со свойствами текущего объекта
 
 
-<a name="method__setEvent" class="anchor"></a>
-#### protected _setEvent() : mixed
+<a name="method_getUnknownProperties" class="anchor"></a>
+#### protected getUnknownProperties() : array
 
 ```php
-protected _setEvent(string $value) : mixed
+protected getUnknownProperties() : array
+```
+
+**Summary**
+
+Возвращает массив свойств которые не существуют, но были заданы у объекта
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
+**Returns:** array - Ассоциативный массив с не существующими у текущего объекта свойствами
+
+
+<a name="method_setEvent" class="anchor"></a>
+#### protected setEvent() : mixed
+
+```php
+protected setEvent(string $value) : mixed
 ```
 
 **Summary**
@@ -541,11 +556,11 @@ protected _setEvent(string $value) : mixed
 **Returns:** mixed - 
 
 
-<a name="method__setType" class="anchor"></a>
-#### protected _setType() : mixed
+<a name="method_setType" class="anchor"></a>
+#### protected setType() : mixed
 
 ```php
-protected _setType(string $value) : mixed
+protected setType(string $value) : mixed
 ```
 
 **Summary**
@@ -570,23 +585,6 @@ protected _setType(string $value) : mixed
 **Returns:** mixed - 
 
 
-<a name="method_getUnknownProperties" class="anchor"></a>
-#### protected getUnknownProperties() : array
-
-```php
-protected getUnknownProperties() : array
-```
-
-**Summary**
-
-Возвращает массив свойств которые не существуют, но были заданы у объекта
-
-**Details:**
-* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
-
-**Returns:** array - Ассоциативный массив с не существующими у текущего объекта свойствами
-
-
 
 ---
 
@@ -598,11 +596,11 @@ protected getUnknownProperties() : array
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

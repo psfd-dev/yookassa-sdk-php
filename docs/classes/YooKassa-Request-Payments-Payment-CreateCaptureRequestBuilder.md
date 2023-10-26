@@ -18,6 +18,7 @@
 | ----------:| ---- | ---- | ------- |
 | protected | [$amount](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#property_amount) |  | Сумма |
 | protected | [$currentObject](../classes/YooKassa-Request-Payments-Payment-CreateCaptureRequestBuilder.md#property_currentObject) |  | Собираемый объект запроса |
+| protected | [$deal](../classes/YooKassa-Request-Payments-Payment-CreateCaptureRequestBuilder.md#property_deal) |  | Объект с информацией о сделке, в составе которой проходит подтверждение платежа. |
 | protected | [$receipt](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#property_receipt) |  | Объект с информацией о чеке |
 | protected | [$transfers](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#property_transfers) |  | Массив платежей в пользу разных мерчантов |
 
@@ -29,8 +30,10 @@
 | public | [addReceiptItem()](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#method_addReceiptItem) |  | Добавляет в чек товар |
 | public | [addReceiptShipping()](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#method_addReceiptShipping) |  | Добавляет в чек доставку товара |
 | public | [build()](../classes/YooKassa-Request-Payments-Payment-CreateCaptureRequestBuilder.md#method_build) |  | Осуществляет сборку объекта запроса к API |
+| public | [setAirline()](../classes/YooKassa-Request-Payments-Payment-CreateCaptureRequestBuilder.md#method_setAirline) |  | Устанавливает информацию об авиабилетах |
 | public | [setAmount()](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#method_setAmount) |  | Устанавливает сумму |
 | public | [setCurrency()](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#method_setCurrency) |  | Устанавливает валюту в которой будет происходить подтверждение оплаты заказа |
+| public | [setDeal()](../classes/YooKassa-Request-Payments-Payment-CreateCaptureRequestBuilder.md#method_setDeal) |  | Устанавливает сделку |
 | public | [setOptions()](../classes/YooKassa-Common-AbstractRequestBuilder.md#method_setOptions) |  | Устанавливает свойства запроса из массива |
 | public | [setReceipt()](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#method_setReceipt) |  | Устанавливает чек |
 | public | [setReceiptEmail()](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#method_setReceiptEmail) |  | Устанавливает адрес электронной почты получателя чека |
@@ -72,6 +75,18 @@
 Собираемый объект запроса
 
 **Type:** <a href="../classes/YooKassa-Request-Payments-Payment-CreateCaptureRequest.html"><abbr title="\YooKassa\Request\Payments\Payment\CreateCaptureRequest">CreateCaptureRequest</abbr></a>
+
+**Details:**
+
+
+<a name="property_deal"></a>
+#### protected $deal : \YooKassa\Model\Deal\CaptureDealData
+---
+**Summary**
+
+Объект с информацией о сделке, в составе которой проходит подтверждение платежа.
+
+**Type:** <a href="../classes/YooKassa-Model-Deal-CaptureDealData.html"><abbr title="\YooKassa\Model\Deal\CaptureDealData">CaptureDealData</abbr></a>
 
 **Details:**
 
@@ -210,7 +225,29 @@ public build(array|null $options = null) : \YooKassa\Request\Payments\Payment\Cr
 | \YooKassa\Common\Exceptions\InvalidRequestException | Выбрасывается если при валидации запроса произошла ошибка |
 | \YooKassa\Common\Exceptions\InvalidPropertyException | Выбрасывается если не удалось установить один из параметров, переданных в массиве настроек |
 
-**Returns:** \YooKassa\Request\Payments\Payment\CreateCaptureRequestInterface|\YooKassa\Common\AbstractRequest - Иснатс объекта запроса к API
+**Returns:** \YooKassa\Request\Payments\Payment\CreateCaptureRequestInterface|\YooKassa\Common\AbstractRequest - Инстанс объекта запроса к API
+
+
+<a name="method_setAirline" class="anchor"></a>
+#### public setAirline() : \YooKassa\Request\Payments\Payment\CreateCaptureRequestBuilder
+
+```php
+public setAirline(\YooKassa\Model\AirlineInterface|array $value) : \YooKassa\Request\Payments\Payment\CreateCaptureRequestBuilder
+```
+
+**Summary**
+
+Устанавливает информацию об авиабилетах
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Payments\Payment\CreateCaptureRequestBuilder](../classes/YooKassa-Request-Payments-Payment-CreateCaptureRequestBuilder.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">\YooKassa\Model\AirlineInterface OR array</code> | value  | Объект данных длинной записи или ассоциативный массив с данными |
+
+**Returns:** \YooKassa\Request\Payments\Payment\CreateCaptureRequestBuilder - 
 
 
 <a name="method_setAmount" class="anchor"></a>
@@ -255,6 +292,33 @@ public setCurrency(string $value) : self
 | <code lang="php">string</code> | value  | Валюта в которой подтверждается оплата |
 
 **Returns:** self - Инстанс билдера запросов
+
+
+<a name="method_setDeal" class="anchor"></a>
+#### public setDeal() : \YooKassa\Request\Payments\Payment\CreateCaptureRequestBuilder
+
+```php
+public setDeal(\YooKassa\Model\Deal\CaptureDealData|array|null $value) : \YooKassa\Request\Payments\Payment\CreateCaptureRequestBuilder
+```
+
+**Summary**
+
+Устанавливает сделку
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Payments\Payment\CreateCaptureRequestBuilder](../classes/YooKassa-Request-Payments-Payment-CreateCaptureRequestBuilder.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">\YooKassa\Model\Deal\CaptureDealData OR array OR null</code> | value  | Данные о сделке, в составе подтверждения оплаты |
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \YooKassa\Common\Exceptions\InvalidPropertyValueTypeException |  |
+
+**Returns:** \YooKassa\Request\Payments\Payment\CreateCaptureRequestBuilder - Инстанс билдера запросов
 
 
 <a name="method_setOptions" class="anchor"></a>
@@ -460,11 +524,11 @@ protected initCurrentObject() : \YooKassa\Request\Payments\Payment\CreateCapture
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

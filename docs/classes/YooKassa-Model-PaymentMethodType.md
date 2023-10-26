@@ -6,25 +6,26 @@
 **Summary:**
 
 PaymentMethodType - Тип источника средств для проведения платежа
-|Код|Описание|
---- | ---
-|yoo_money|Платеж из кошелька ЮMoney|
-|bank_card|Платеж с произвольной банковской карты|
-|sberbank|Платеж СбербанкОнлайн|
-|cash|Платеж наличными|
-|mobile_balance|Платеж с баланса мобильного телефона|
-|apple_pay|Платеж ApplePay|
-|google_pay|Платеж Google Pay|
-|qiwi|Платеж из кошелька Qiwi|
-|webmoney|Платеж из кошелька Webmoney|
-|alfabank|Платеж через Альфа-Клик|
-|b2b_sberbank|Сбербанк Бизнес Онлайн|
-|tinkoff_bank|Интернет-банк Тинькофф|
-|psb|ПромсвязьБанк|
-|installments|Заплатить по частям|
-|wechat|Платеж через WeChat|
-|wechat|Платеж через через сервис быстрых платежей|
 
+**Description:**
+
+Возможные значения:
+- `yoo_money` - Платеж из кошелька ЮMoney
+- `bank_card` - Платеж с произвольной банковской карты
+- `sberbank` - Платеж СбербанкОнлайн
+- `cash` - Платеж наличными
+- `mobile_balance` - Платеж с баланса мобильного телефона
+- `apple_pay` - Платеж ApplePay
+- `google_pay` - Платеж Google Pay
+- `qiwi` - Платеж из кошелька Qiwi
+- `webmoney` - Платеж из кошелька Webmoney
+- `alfabank` - Платеж через Альфа-Клик
+- `b2b_sberbank` - Сбербанк Бизнес Онлайн
+- `tinkoff_bank` - Интернет-банк Тинькофф
+- `psb` - ПромсвязьБанк
+- `installments` - Заплатить по частям
+- `wechat` - Платеж через WeChat
+- `sbp` - Платеж через через сервис быстрых платежей
 
 ---
 ### Constants
@@ -38,14 +39,16 @@ PaymentMethodType - Тип источника средств для провед
 | public | [APPLE_PAY](../classes/YooKassa-Model-PaymentMethodType.md#constant_APPLE_PAY) |  | латеж ApplePay |
 | public | [GOOGLE_PAY](../classes/YooKassa-Model-PaymentMethodType.md#constant_GOOGLE_PAY) |  | Платеж Google Pay |
 | public | [QIWI](../classes/YooKassa-Model-PaymentMethodType.md#constant_QIWI) |  | Платеж из кошелька Qiwi |
-| public | [WEBMONEY](../classes/YooKassa-Model-PaymentMethodType.md#constant_WEBMONEY) |  | Платеж из кошелька Webmoney |
-| public | [ALFABANK](../classes/YooKassa-Model-PaymentMethodType.md#constant_ALFABANK) |  | Платеж через Альфа-Клик |
+| public | [WEBMONEY](../classes/YooKassa-Model-PaymentMethodType.md#constant_WEBMONEY) | *deprecated* | Платеж из кошелька Webmoney |
+| public | [ALFABANK](../classes/YooKassa-Model-PaymentMethodType.md#constant_ALFABANK) | *deprecated* | Платеж через Альфа-Клик |
 | public | [B2B_SBERBANK](../classes/YooKassa-Model-PaymentMethodType.md#constant_B2B_SBERBANK) |  | Сбербанк Бизнес Онлайн |
 | public | [TINKOFF_BANK](../classes/YooKassa-Model-PaymentMethodType.md#constant_TINKOFF_BANK) |  | Интернет-банк Тинькофф |
-| public | [PSB](../classes/YooKassa-Model-PaymentMethodType.md#constant_PSB) |  | ПромсвязьБанк |
+| public | [PSB](../classes/YooKassa-Model-PaymentMethodType.md#constant_PSB) | *deprecated* | ПромсвязьБанк |
 | public | [INSTALLMENTS](../classes/YooKassa-Model-PaymentMethodType.md#constant_INSTALLMENTS) |  | Заплатить по частям |
 | public | [WECHAT](../classes/YooKassa-Model-PaymentMethodType.md#constant_WECHAT) | *deprecated* | Оплата через WeChat |
 | public | [SBP](../classes/YooKassa-Model-PaymentMethodType.md#constant_SBP) |  | Оплата через сервис быстрых платежей |
+| public | [SBER_LOAN](../classes/YooKassa-Model-PaymentMethodType.md#constant_SBER_LOAN) |  | Прием оплаты с использованием Кредита от СберБанка |
+| public | [UNKNOWN](../classes/YooKassa-Model-PaymentMethodType.md#constant_UNKNOWN) | *deprecated* | Для неизвестных методов оплаты |
 
 ---
 ### Properties
@@ -144,22 +147,26 @@ QIWI = 'qiwi'
 
 
 <a name="constant_WEBMONEY" class="anchor"></a>
-###### WEBMONEY
+###### ~~WEBMONEY~~
 Платеж из кошелька Webmoney
 
 ```php
 WEBMONEY = 'webmoney'
 ```
 
+**deprecated**
+Будет удален в следующих версиях
 
 <a name="constant_ALFABANK" class="anchor"></a>
-###### ALFABANK
+###### ~~ALFABANK~~
 Платеж через Альфа-Клик
 
 ```php
 ALFABANK = 'alfabank'
 ```
 
+**deprecated**
+Будет удален в следующих версиях
 
 <a name="constant_B2B_SBERBANK" class="anchor"></a>
 ###### B2B_SBERBANK
@@ -180,13 +187,15 @@ TINKOFF_BANK = 'tinkoff_bank'
 
 
 <a name="constant_PSB" class="anchor"></a>
-###### PSB
+###### ~~PSB~~
 ПромсвязьБанк
 
 ```php
 PSB = 'psb'
 ```
 
+**deprecated**
+Будет удален в следующих версиях
 
 <a name="constant_INSTALLMENTS" class="anchor"></a>
 ###### INSTALLMENTS
@@ -216,6 +225,26 @@ WECHAT = 'wechat'
 SBP = 'sbp'
 ```
 
+
+<a name="constant_SBER_LOAN" class="anchor"></a>
+###### SBER_LOAN
+Прием оплаты с использованием Кредита от СберБанка
+
+```php
+SBER_LOAN = 'sber_loan'
+```
+
+
+<a name="constant_UNKNOWN" class="anchor"></a>
+###### ~~UNKNOWN~~
+Для неизвестных методов оплаты
+
+```php
+UNKNOWN = 'unknown'
+```
+
+**deprecated**
+Не используется для реальных платежей
 
 
 ---
@@ -298,11 +327,11 @@ Static public valueExists(mixed $value) : bool
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

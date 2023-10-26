@@ -104,6 +104,8 @@ var_dump($response);
 | ----------:| ---- | ---- | ------- |
 | protected | [$amount](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#property_amount) |  | Сумма |
 | protected | [$currentObject](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#property_currentObject) |  | Собираемый объект запроса |
+| protected | [$deal](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#property_deal) |  | Объект с информацией о сделке, в составе которой проходит платеж. |
+| protected | [$fraud_data](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#property_fraud_data) |  | Объект с информацией о сделке, в составе которой проходит платеж. |
 | protected | [$receipt](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#property_receipt) |  | Объект с информацией о чеке |
 | protected | [$transfers](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#property_transfers) |  | Массив платежей в пользу разных мерчантов |
 
@@ -122,8 +124,9 @@ var_dump($response);
 | public | [setClientIp()](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#method_setClientIp) |  | Устанавливает IP адрес покупателя |
 | public | [setConfirmation()](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#method_setConfirmation) |  | Устанавливает способ подтверждения платежа |
 | public | [setCurrency()](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#method_setCurrency) |  | Устанавливает валюту в которой будет происходить подтверждение оплаты заказа |
-| public | [setDeal()](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#method_setDeal) |  | Устанавливает данные о сделке, в составе которой проходит платеж. |
+| public | [setDeal()](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#method_setDeal) |  | Устанавливает сделку |
 | public | [setDescription()](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#method_setDescription) |  | Устанавливает описание транзакции |
+| public | [setFraudData()](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#method_setFraudData) |  | Устанавливает сделку |
 | public | [setGatewayId()](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#method_setGatewayId) |  | Устанавливает идентификатор шлюза |
 | public | [setMerchantCustomerId()](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#method_setMerchantCustomerId) |  | Устанавливает идентификатор покупателя в вашей системе |
 | public | [setMetadata()](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#method_setMetadata) |  | Устанавливает метаданные, привязанные к платежу |
@@ -132,8 +135,11 @@ var_dump($response);
 | public | [setPaymentMethodId()](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#method_setPaymentMethodId) |  | Устанавливает идентификатор записи о сохранённых данных покупателя |
 | public | [setPaymentToken()](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#method_setPaymentToken) |  | Устанавливает одноразовый токен для проведения оплаты |
 | public | [setReceipt()](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#method_setReceipt) |  | Устанавливает чек |
+| public | [setReceiptAdditionalUserProps()](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#method_setReceiptAdditionalUserProps) |  | Устанавливает отраслевой реквизит чека |
 | public | [setReceiptEmail()](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#method_setReceiptEmail) |  | Устанавливает адрес электронной почты получателя чека |
+| public | [setReceiptIndustryDetails()](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#method_setReceiptIndustryDetails) |  | Устанавливает отраслевой реквизит чека |
 | public | [setReceiptItems()](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#method_setReceiptItems) |  | Устанавлвиает список товаров для создания чека |
+| public | [setReceiptOperationalDetails()](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#method_setReceiptOperationalDetails) |  | Устанавливает отраслевой реквизит чека |
 | public | [setReceiptPhone()](../classes/YooKassa-Common-AbstractPaymentRequestBuilder.md#method_setReceiptPhone) |  | Устанавливает телефон получателя чека |
 | public | [setRecipient()](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#method_setRecipient) |  | Устанавливает получателя платежа из объекта или ассоциативного массива |
 | public | [setSavePaymentMethod()](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md#method_setSavePaymentMethod) |  | Устанавливает флаг сохранения платёжных данных. Значение true инициирует создание многоразового payment_method. |
@@ -175,6 +181,30 @@ var_dump($response);
 Собираемый объект запроса
 
 **Type:** <a href="../classes/YooKassa-Request-Payments-CreatePaymentRequest.html"><abbr title="\YooKassa\Request\Payments\CreatePaymentRequest">CreatePaymentRequest</abbr></a>
+
+**Details:**
+
+
+<a name="property_deal"></a>
+#### protected $deal : \YooKassa\Model\Deal\PaymentDealInfo
+---
+**Summary**
+
+Объект с информацией о сделке, в составе которой проходит платеж.
+
+**Type:** <a href="../classes/YooKassa-Model-Deal-PaymentDealInfo.html"><abbr title="\YooKassa\Model\Deal\PaymentDealInfo">PaymentDealInfo</abbr></a>
+
+**Details:**
+
+
+<a name="property_fraud_data"></a>
+#### protected $fraud_data : \YooKassa\Model\FraudData
+---
+**Summary**
+
+Объект с информацией о сделке, в составе которой проходит платеж.
+
+**Type:** <a href="../classes/YooKassa-Model-FraudData.html"><abbr title="\YooKassa\Model\FraudData">FraudData</abbr></a>
 
 **Details:**
 
@@ -492,15 +522,15 @@ public setCurrency(string $value) : self
 
 
 <a name="method_setDeal" class="anchor"></a>
-#### public setDeal() : mixed
+#### public setDeal() : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 
 ```php
-public setDeal(\YooKassa\Model\Deal\PaymentDealInfo|array|null $value) : mixed
+public setDeal(\YooKassa\Model\Deal\PaymentDealInfo|array|null $value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 ```
 
 **Summary**
 
-Устанавливает данные о сделке, в составе которой проходит платеж.
+Устанавливает сделку
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestBuilder](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md)
@@ -513,9 +543,9 @@ public setDeal(\YooKassa\Model\Deal\PaymentDealInfo|array|null $value) : mixed
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
-| \YooKassa\Common\Exceptions\InvalidPropertyValueTypeException | Выбрасывается если переданные данные не удалось интерпретировать как метаданные платежа |
+| \YooKassa\Common\Exceptions\InvalidPropertyValueTypeException |  |
 
-**Returns:** mixed - 
+**Returns:** \YooKassa\Request\Payments\CreatePaymentRequestBuilder - Инстанс билдера запросов
 
 
 <a name="method_setDescription" class="anchor"></a>
@@ -544,6 +574,33 @@ public setDescription(string $value) : \YooKassa\Request\Payments\CreatePaymentR
 | \YooKassa\Common\Exceptions\InvalidPropertyValueTypeException | Выбрасывается если переданное значение не является строкой |
 
 **Returns:** \YooKassa\Request\Payments\CreatePaymentRequestBuilder - Инстанс текущего билдера
+
+
+<a name="method_setFraudData" class="anchor"></a>
+#### public setFraudData() : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
+
+```php
+public setFraudData(\YooKassa\Model\FraudData|array|null $value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
+```
+
+**Summary**
+
+Устанавливает сделку
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestBuilder](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">\YooKassa\Model\FraudData OR array OR null</code> | value  | Данные о сделке, в составе которой проходит платеж |
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \YooKassa\Common\Exceptions\InvalidPropertyValueTypeException |  |
+
+**Returns:** \YooKassa\Request\Payments\CreatePaymentRequestBuilder - Информация для проверки операции на мошенничество
 
 
 <a name="method_setGatewayId" class="anchor"></a>
@@ -766,6 +823,28 @@ public setReceipt(\YooKassa\Model\ReceiptInterface|array $value) : self
 **Returns:** self - 
 
 
+<a name="method_setReceiptAdditionalUserProps" class="anchor"></a>
+#### public setReceiptAdditionalUserProps() : self
+
+```php
+public setReceiptAdditionalUserProps(array|\YooKassa\Model\Receipt\IndustryDetails[] $value) : self
+```
+
+**Summary**
+
+Устанавливает отраслевой реквизит чека
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestBuilder](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">array OR \YooKassa\Model\Receipt\IndustryDetails[]</code> | value  | Отраслевой реквизит чека |
+
+**Returns:** self - Инстанс билдера запросов
+
+
 <a name="method_setReceiptEmail" class="anchor"></a>
 #### public setReceiptEmail() : self
 
@@ -784,6 +863,28 @@ public setReceiptEmail(string $value) : self
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Email получателя чека |
+
+**Returns:** self - Инстанс билдера запросов
+
+
+<a name="method_setReceiptIndustryDetails" class="anchor"></a>
+#### public setReceiptIndustryDetails() : self
+
+```php
+public setReceiptIndustryDetails(array|\YooKassa\Model\Receipt\IndustryDetails[] $value) : self
+```
+
+**Summary**
+
+Устанавливает отраслевой реквизит чека
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestBuilder](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">array OR \YooKassa\Model\Receipt\IndustryDetails[]</code> | value  | Отраслевой реквизит чека |
 
 **Returns:** self - Инстанс билдера запросов
 
@@ -811,6 +912,28 @@ public setReceiptItems(array $value) : self
 | Type | Description |
 | ---- | ----------- |
 | \YooKassa\Common\Exceptions\InvalidPropertyValueException | Выбрасывается если хотя бы один из товаров имеет неверную структуру |
+
+**Returns:** self - Инстанс билдера запросов
+
+
+<a name="method_setReceiptOperationalDetails" class="anchor"></a>
+#### public setReceiptOperationalDetails() : self
+
+```php
+public setReceiptOperationalDetails(array|\YooKassa\Model\Receipt\IndustryDetails[] $value) : self
+```
+
+**Summary**
+
+Устанавливает отраслевой реквизит чека
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestBuilder](../classes/YooKassa-Request-Payments-CreatePaymentRequestBuilder.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">array OR \YooKassa\Model\Receipt\IndustryDetails[]</code> | value  | Отраслевой реквизит чека |
 
 **Returns:** self - Инстанс билдера запросов
 
@@ -1002,11 +1125,11 @@ protected initCurrentObject() : \YooKassa\Request\Payments\CreatePaymentRequest
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

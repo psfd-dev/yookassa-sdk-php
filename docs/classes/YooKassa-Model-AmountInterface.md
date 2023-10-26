@@ -20,6 +20,7 @@ Interface AmountInterface
 | public | [getValue()](../classes/YooKassa-Model-AmountInterface.md#method_getValue) |  | Возвращает значение суммы |
 | public | [setCurrency()](../classes/YooKassa-Model-AmountInterface.md#method_setCurrency) |  | Устанавливает код валюты |
 | public | [setValue()](../classes/YooKassa-Model-AmountInterface.md#method_setValue) |  | Устанавливает значение суммы |
+| public | [toArray()](../classes/YooKassa-Model-AmountInterface.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации |
 
 ---
 ### Details
@@ -130,6 +131,23 @@ public setCurrency(string $value) : mixed
 **Returns:** mixed - 
 
 
+<a name="method_toArray" class="anchor"></a>
+#### public toArray() : array
+
+```php
+public toArray() : array
+```
+
+**Summary**
+
+Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации
+
+**Details:**
+* Inherited From: [\YooKassa\Model\AmountInterface](../classes/YooKassa-Model-AmountInterface.md)
+
+**Returns:** array - Ассоциативный массив со свойствами текущего объекта
+
+
 
 
 ---
@@ -142,11 +160,11 @@ public setCurrency(string $value) : mixed
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

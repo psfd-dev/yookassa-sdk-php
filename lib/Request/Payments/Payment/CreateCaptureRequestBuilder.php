@@ -3,7 +3,7 @@
 /**
  * The MIT License
  *
- * Copyright (c) 2022 "YooMoney", NBСO LLC
+ * Copyright (c) 2023 "YooMoney", NBСO LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,7 +29,10 @@ namespace YooKassa\Request\Payments\Payment;
 use YooKassa\Common\AbstractPaymentRequestBuilder;
 use YooKassa\Common\AbstractRequest;
 use YooKassa\Common\Exceptions\InvalidPropertyException;
+use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 use YooKassa\Common\Exceptions\InvalidRequestException;
+use YooKassa\Model\AirlineInterface;
+use YooKassa\Model\Deal\CaptureDealData;
 
 class CreateCaptureRequestBuilder extends AbstractPaymentRequestBuilder
 {
@@ -38,6 +41,12 @@ class CreateCaptureRequestBuilder extends AbstractPaymentRequestBuilder
      * @var CreateCaptureRequest
      */
     protected $currentObject;
+
+    /**
+     * Объект с информацией о сделке, в составе которой проходит подтверждение платежа.
+     * @var CaptureDealData
+     */
+    protected $deal;
 
     /**
      * @return CreateCaptureRequest
@@ -52,7 +61,7 @@ class CreateCaptureRequestBuilder extends AbstractPaymentRequestBuilder
     /**
      * Осуществляет сборку объекта запроса к API
      * @param array|null $options Массив дополнительных настроек объекта
-     * @return CreateCaptureRequestInterface|AbstractRequest Иснатс объекта запроса к API
+     * @return CreateCaptureRequestInterface|AbstractRequest Инстанс объекта запроса к API
      *
      * @throws InvalidRequestException Выбрасывается если при валидации запроса произошла ошибка
      * @throws InvalidPropertyException Выбрасывается если не удалось установить один из параметров, переданных в массиве настроек
@@ -71,6 +80,33 @@ class CreateCaptureRequestBuilder extends AbstractPaymentRequestBuilder
         if ($this->receipt->notEmpty()) {
             $this->currentObject->setReceipt($this->receipt);
         }
+
         return parent::build();
+    }
+
+    /**
+     * Устанавливает информацию об авиабилетах
+     * @param AirlineInterface|array $value Объект данных длинной записи или ассоциативный массив с данными
+     *
+     * @return CreateCaptureRequestBuilder
+     */
+    public function setAirline($value)
+    {
+        $this->currentObject->setAirline($value);
+
+        return $this;
+    }
+
+    /**
+     * Устанавливает сделку
+     * @param CaptureDealData|array|null $value Данные о сделке, в составе подтверждения оплаты
+     * @throws InvalidPropertyValueTypeException
+     *
+     * @return CreateCaptureRequestBuilder Инстанс билдера запросов
+     */
+    public function setDeal($value)
+    {
+        $this->currentObject->setDeal($value);
+        return $this;
     }
 }

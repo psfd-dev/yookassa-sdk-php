@@ -6,18 +6,21 @@
 **Summary:**
 
 BankCardSource - Источник данных банковской карты
-|Код|Описание|
---- | ---
-|apple_pay|Источник данных apple_pay|
-|google_pay|Источник данных google_pay|
 
+**Description:**
+
+Возможные значения:
+- apple_pay - Источник данных ApplePay
+- google_pay - Источник данных GooglePay
+- mir_pay - Источник данных MirPay
 
 ---
 ### Constants
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
-| public | [APPLE_PAY](../classes/YooKassa-Model-PaymentMethod-BankCardSource.md#constant_APPLE_PAY) |  |  |
-| public | [GOOGLE_PAY](../classes/YooKassa-Model-PaymentMethod-BankCardSource.md#constant_GOOGLE_PAY) |  |  |
+| public | [APPLE_PAY](../classes/YooKassa-Model-PaymentMethod-BankCardSource.md#constant_APPLE_PAY) |  | Источник данных ApplePay |
+| public | [GOOGLE_PAY](../classes/YooKassa-Model-PaymentMethod-BankCardSource.md#constant_GOOGLE_PAY) |  | Источник данных GooglePay |
+| public | [MIR_PAY](../classes/YooKassa-Model-PaymentMethod-BankCardSource.md#constant_MIR_PAY) |  | Источник данных MirPay |
 
 ---
 ### Properties
@@ -45,6 +48,8 @@ BankCardSource - Источник данных банковской карты
 ## Constants
 <a name="constant_APPLE_PAY" class="anchor"></a>
 ###### APPLE_PAY
+Источник данных ApplePay
+
 ```php
 APPLE_PAY = 'apple_pay'
 ```
@@ -52,8 +57,19 @@ APPLE_PAY = 'apple_pay'
 
 <a name="constant_GOOGLE_PAY" class="anchor"></a>
 ###### GOOGLE_PAY
+Источник данных GooglePay
+
 ```php
 GOOGLE_PAY = 'google_pay'
+```
+
+
+<a name="constant_MIR_PAY" class="anchor"></a>
+###### MIR_PAY
+Источник данных MirPay
+
+```php
+MIR_PAY = 'mir_pay'
 ```
 
 
@@ -138,11 +154,11 @@ Static public valueExists(mixed $value) : bool
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

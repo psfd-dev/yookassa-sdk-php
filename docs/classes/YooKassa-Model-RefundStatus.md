@@ -6,12 +6,13 @@
 **Summary:**
 
 RefundStatus - Состояние возврата платежа
-|Код|Описание|
---- | ---
-|pending|Ожидает обработки|
-|succeeded|Успешно возвращен|
-|canceled|В проведении возврата отказано|
 
+**Description:**
+
+Возможные значения:
+- `pending` - Ожидает обработки
+- `succeeded` - Успешно возвращен
+- `canceled` - В проведении возврата отказано
 
 ---
 ### Constants
@@ -147,11 +148,11 @@ Static public valueExists(mixed $value) : bool
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

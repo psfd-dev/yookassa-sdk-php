@@ -3,7 +3,7 @@
 /**
  * The MIT License
  *
- * Copyright (c) 2022 "YooMoney", NBСO LLC
+ * Copyright (c) 2023 "YooMoney", NBСO LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -39,10 +39,13 @@ use YooKassa\Model\AirlineInterface;
 use YooKassa\Model\ConfirmationAttributes\AbstractConfirmationAttributes;
 use YooKassa\Model\ConfirmationAttributes\ConfirmationAttributesFactory;
 use YooKassa\Model\Deal\PaymentDealInfo;
+use YooKassa\Model\FraudData;
 use YooKassa\Model\Metadata;
 use YooKassa\Model\Payment;
 use YooKassa\Model\PaymentData\AbstractPaymentData;
 use YooKassa\Model\PaymentData\PaymentDataFactory;
+use YooKassa\Model\Receipt\AdditionalUserProps;
+use YooKassa\Model\Receipt\IndustryDetails;
 use YooKassa\Model\Recipient;
 use YooKassa\Model\RecipientInterface;
 
@@ -77,9 +80,21 @@ class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
     private $confirmationFactory;
 
     /**
-     * @var Airline Длинная запись
+     * @var AirlineInterface Объект с данными для продажи авиабилетов
      */
     private $airline;
+
+    /**
+     * Объект с информацией о сделке, в составе которой проходит платеж.
+     * @var PaymentDealInfo
+     */
+    protected $deal;
+
+    /**
+     * Объект с информацией о сделке, в составе которой проходит платеж.
+     * @var FraudData
+     */
+    protected $fraud_data;
 
     /**
      * Инициализирует объект запроса, который в дальнейшем будет собираться билдером
@@ -157,9 +172,8 @@ class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
         } elseif ($value instanceof AirlineInterface) {
             $this->airline = clone $value;
         } else {
-            throw new InvalidPropertyValueTypeException('Invalid receipt value type', 0, 'receipt', $value);
+            throw new InvalidPropertyValueTypeException('Invalid airline value type', 0, 'airline', $value);
         }
-
 
         return $this;
     }
@@ -307,14 +321,57 @@ class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
     }
 
     /**
-     * Устанавливает данные о сделке, в составе которой проходит платеж.
+     * Устанавливает сделку
      * @param PaymentDealInfo|array|null $value Данные о сделке, в составе которой проходит платеж
+     * @throws InvalidPropertyValueTypeException
      *
-     * @throws InvalidPropertyValueTypeException Выбрасывается если переданные данные не удалось интерпретировать как метаданные платежа
+     * @return CreatePaymentRequestBuilder Инстанс билдера запросов
      */
     public function setDeal($value)
     {
-        $this->currentObject->setDeal($value);
+        if ($value === null) {
+            return $this;
+        }
+        if ($value instanceof PaymentDealInfo) {
+            $this->deal = $value;
+        } elseif (is_array($value)) {
+            $this->deal = new PaymentDealInfo($value);
+        } else {
+            throw new InvalidPropertyValueTypeException(
+                'Invalid deal value type in CreatePaymentRequest',
+                0,
+                'CreatePaymentRequest.deal',
+                $value
+            );
+        }
+        return $this;
+    }
+
+    /**
+     * Устанавливает сделку
+     * @param FraudData|array|null $value Данные о сделке, в составе которой проходит платеж
+     * @throws InvalidPropertyValueTypeException
+     *
+     * @return CreatePaymentRequestBuilder Информация для проверки операции на мошенничество
+     */
+    public function setFraudData($value)
+    {
+        if ($value === null || (is_array($value) && empty($value))) {
+            $this->fraud_data = null;
+            return $this;
+        }
+        if ($value instanceof FraudData) {
+            $this->fraud_data = $value;
+        } elseif (is_array($value)) {
+            $this->fraud_data = new FraudData($value);
+        } else {
+            throw new InvalidPropertyValueTypeException(
+                'Invalid fraud_data value type in CreatePaymentRequest',
+                0,
+                'CreatePaymentRequest.fraud_data',
+                $value
+            );
+        }
         return $this;
     }
 
@@ -327,6 +384,45 @@ class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
     public function setMerchantCustomerId($value)
     {
         $this->currentObject->setMerchantCustomerId($value);
+        return $this;
+    }
+
+    /**
+     * Устанавливает отраслевой реквизит чека
+     *
+     * @param array|IndustryDetails[] $value Отраслевой реквизит чека
+     * @return self Инстанс билдера запросов
+     */
+    public function setReceiptAdditionalUserProps($value)
+    {
+        $this->receipt->setAdditionalUserProps($value);
+
+        return $this;
+    }
+
+    /**
+     * Устанавливает отраслевой реквизит чека
+     *
+     * @param array|IndustryDetails[] $value Отраслевой реквизит чека
+     * @return self Инстанс билдера запросов
+     */
+    public function setReceiptIndustryDetails($value)
+    {
+        $this->receipt->setReceiptIndustryDetails($value);
+
+        return $this;
+    }
+
+    /**
+     * Устанавливает отраслевой реквизит чека
+     *
+     * @param array|IndustryDetails[] $value Отраслевой реквизит чека
+     * @return self Инстанс билдера запросов
+     */
+    public function setReceiptOperationalDetails($value)
+    {
+        $this->receipt->setReceiptOperationalDetails($value);
+
         return $this;
     }
 
@@ -349,11 +445,17 @@ class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
         if ($this->receipt->notEmpty()) {
             $this->currentObject->setReceipt($this->receipt);
         }
-        if($this->airline->notEmpty()){
+        if ($this->airline->notEmpty()) {
             $this->currentObject->setAirline($this->airline);
         }
         $this->currentObject->setAmount($this->amount);
         $this->currentObject->setTransfers($this->transfers);
+        if ($this->deal) {
+            $this->currentObject->setDeal($this->deal);
+        }
+        if ($this->fraud_data) {
+            $this->currentObject->setFraudData($this->fraud_data);
+        }
 
         return parent::build();
     }

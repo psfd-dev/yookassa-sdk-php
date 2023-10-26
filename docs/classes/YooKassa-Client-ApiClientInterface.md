@@ -17,6 +17,7 @@ Interface ApiClientInterface
 | ----------:| ---- | ---- | ------- |
 | public | [call()](../classes/YooKassa-Client-ApiClientInterface.md#method_call) |  | Создает CURL запрос, получает и возвращает обработанный ответ |
 | public | [getUserAgent()](../classes/YooKassa-Client-ApiClientInterface.md#method_getUserAgent) |  | Возвращает UserAgent |
+| public | [setAdvancedCurlOptions()](../classes/YooKassa-Client-ApiClientInterface.md#method_setAdvancedCurlOptions) |  | Устанавливает дополнительные настройки curl |
 | public | [setBearerToken()](../classes/YooKassa-Client-ApiClientInterface.md#method_setBearerToken) |  | Устанавливает OAuth-токен магазина |
 | public | [setConfig()](../classes/YooKassa-Client-ApiClientInterface.md#method_setConfig) |  | Устанавливает настройки |
 | public | [setLogger()](../classes/YooKassa-Client-ApiClientInterface.md#method_setLogger) |  | Устанавливает объект для логирования |
@@ -183,6 +184,23 @@ public setConfig(array $config) : mixed
 **Returns:** mixed - 
 
 
+<a name="method_setAdvancedCurlOptions" class="anchor"></a>
+#### public setAdvancedCurlOptions() : void
+
+```php
+public setAdvancedCurlOptions() : void
+```
+
+**Summary**
+
+Устанавливает дополнительные настройки curl
+
+**Details:**
+* Inherited From: [\YooKassa\Client\ApiClientInterface](../classes/YooKassa-Client-ApiClientInterface.md)
+
+**Returns:** void - 
+
+
 
 
 ---
@@ -195,11 +213,11 @@ public setConfig(array $config) : mixed
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

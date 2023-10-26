@@ -3,7 +3,7 @@
 /**
  * The MIT License
  *
- * Copyright (c) 2022 "YooMoney", NBСO LLC
+ * Copyright (c) 2023 "YooMoney", NBСO LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -43,12 +43,17 @@ use YooKassa\Model\SourceInterface;
  */
 class CreateRefundRequestBuilder extends AbstractPaymentRequestBuilder
 {
-
     /**
      * Собираемый объект запроса к API
      * @var CreateRefundRequest
      */
     protected $currentObject;
+
+    /**
+     * Объект с информацией о сделке, в составе которой проходит возврат.
+     * @var RefundDealData
+     */
+    protected $deal;
 
     /**
      * Возвращает новый объект для сборки
@@ -103,15 +108,29 @@ class CreateRefundRequestBuilder extends AbstractPaymentRequestBuilder
     }
 
     /**
-     * Устанавливает данные о сделке, в составе которой проходит возврат
-     *
+     * Устанавливает сделку
      * @param RefundDealData|array|null $value Данные о сделке, в составе которой проходит возврат
+     * @throws InvalidPropertyValueTypeException
      *
-     * @return self Инстанс билдера запросов
+     * @return CreateRefundRequestBuilder Инстанс билдера запросов
      */
     public function setDeal($value)
     {
-        $this->currentObject->setDeal($value);
+        if ($value === null) {
+            return $this;
+        }
+        if ($value instanceof RefundDealData) {
+            $this->deal = $value;
+        } elseif (is_array($value)) {
+            $this->deal = new RefundDealData($value);
+        } else {
+            throw new InvalidPropertyValueTypeException(
+                'Invalid deal value type in CreateRefundRequest',
+                0,
+                'CreateRefundRequest.deal',
+                $value
+            );
+        }
         return $this;
     }
 
@@ -130,6 +149,10 @@ class CreateRefundRequestBuilder extends AbstractPaymentRequestBuilder
 
         if ($this->receipt->notEmpty()) {
             $this->currentObject->setReceipt($this->receipt);
+        }
+
+        if ($this->deal) {
+            $this->currentObject->setDeal($this->deal);
         }
         return parent::build();
     }

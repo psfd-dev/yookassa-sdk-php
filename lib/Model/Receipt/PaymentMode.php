@@ -1,8 +1,9 @@
 <?php
+
 /**
  * The MIT License
  *
- * Copyright (c) 2022 "YooMoney", NBСO LLC
+ * Copyright (c) 2023 "YooMoney", NBСO LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -25,17 +26,26 @@
 
 namespace YooKassa\Model\Receipt;
 
-
 use YooKassa\Common\AbstractEnum;
 
+/**
+ * Признак способа расчета передается в параметре `payment_mode`.
+ */
 class PaymentMode extends AbstractEnum
 {
+    /** Полная предоплата */
     const FULL_PREPAYMENT = 'full_prepayment';
+    /** Частичная предоплата */
     const PARTIAL_PREPAYMENT = 'partial_prepayment';
+    /** Аванс */
     const ADVANCE = 'advance';
+    /** Полный расчет */
     const FULL_PAYMENT = 'full_payment';
+    /** Частичный расчет и кредит */
     const PARTIAL_PAYMENT = 'partial_payment';
+    /** Кредит */
     const CREDIT = 'credit';
+    /** Выплата по кредиту */
     const CREDIT_PAYMENT = 'credit_payment';
 
     protected static $validValues = array(

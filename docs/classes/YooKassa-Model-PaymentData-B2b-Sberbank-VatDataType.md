@@ -6,12 +6,13 @@
 **Summary:**
 
 PaymentDataB2bSberbankVatDataType - Способ расчёта НДС
-|Код|Описание|
---- | ---
-|calculated|Сумма НДС включена в сумму платежа|
-|mixed|Разные ставки НДС для разных товаров|
-|untaxed|Сумма платежа НДС не облагается|
 
+**Description:**
+
+Возможные значения:
+- calculated - Сумма НДС включена в сумму платежа
+- mixed - Разные ставки НДС для разных товаров
+- untaxed - Сумма платежа НДС не облагается
 
 ---
 ### Constants
@@ -153,11 +154,11 @@ Static public valueExists(mixed $value) : bool
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

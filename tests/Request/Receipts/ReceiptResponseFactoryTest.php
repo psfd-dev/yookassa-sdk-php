@@ -9,7 +9,6 @@ use PHPUnit\Framework\TestCase;
 
 class ReceiptResponseFactoryTest extends TestCase
 {
-
     /**
      * @dataProvider invalidFactoryDataProvider
      * @param array $value
@@ -43,7 +42,8 @@ class ReceiptResponseFactoryTest extends TestCase
             ),
             array(
                 array(
-                    'type' => ReceiptType::REFUND
+                    'type' => ReceiptType::REFUND,
+                    'payment_id' => 1
                 )
             )
         );

@@ -3,7 +3,7 @@
 /**
  * The MIT License
  *
- * Copyright (c) 2022 "YooMoney", NBСO LLC
+ * Copyright (c) 2023 "YooMoney", NBСO LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -35,7 +35,7 @@ use YooKassa\Model\Metadata;
 /**
  * Класс билдера объектов запросов к API на создание платежа
  *
- * @todo: @example 02-builder.php 11 78 Пример использования билдера
+ * @example 02-builder.php 11 78 Пример использования билдера
  *
  * @package YooKassa
  */

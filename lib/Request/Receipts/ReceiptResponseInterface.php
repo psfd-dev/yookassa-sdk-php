@@ -3,7 +3,7 @@
 /**
  * The MIT License
  *
- * Copyright (c) 2022 "YooMoney", NBСO LLC
+ * Copyright (c) 2023 "YooMoney", NBСO LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -98,5 +98,5 @@ interface ReceiptResponseInterface
      * Проверяет есть ли в чеке хотя бы одна позиция
      * @return bool True если чек не пуст, false если в чеке нет ни одной позиции
      */
-    function notEmpty();
+    public function notEmpty();
 }

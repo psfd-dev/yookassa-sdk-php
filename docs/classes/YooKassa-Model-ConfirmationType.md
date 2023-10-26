@@ -6,26 +6,27 @@
 **Summary:**
 
 ConfirmationType - Тип пользовательского процесса подтверждения платежа
-|Код|Описание|
---- | ---
-|redirect|Необходимо направить плательщика на страницу партнера|
-|external|Необходимо ождать пока плательщик самостоятельно подтвердит платеж|
-|code_verification|Необходимо получить одноразовый код от плательщика для подтверждения платежа|
-|embedded|Необходимо получить токен для checkout.js|
-|qr|Необходимо получить QR-код|
-|mobile_application|необходимо совершить действия в мобильном приложении|
 
+**Description:**
+
+Возможные значения:
+- `redirect` - Необходимо направить плательщика на страницу партнера
+- `external` - Для подтверждения платежа пользователю необходимо совершить действия во внешней системе (например, ответить на смс)
+- `code_verification` - Необходимо получить одноразовый код от плательщика для подтверждения платежа
+- `embedded` - Необходимо получить токен для checkout.js
+- `qr` - Необходимо получить QR-код
+- `mobile_application` - Необходимо совершить действия в мобильном приложении
 
 ---
 ### Constants
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
-| public | [REDIRECT](../classes/YooKassa-Model-ConfirmationType.md#constant_REDIRECT) |  |  |
-| public | [EXTERNAL](../classes/YooKassa-Model-ConfirmationType.md#constant_EXTERNAL) |  |  |
-| public | [CODE_VERIFICATION](../classes/YooKassa-Model-ConfirmationType.md#constant_CODE_VERIFICATION) |  |  |
-| public | [EMBEDDED](../classes/YooKassa-Model-ConfirmationType.md#constant_EMBEDDED) |  |  |
-| public | [QR](../classes/YooKassa-Model-ConfirmationType.md#constant_QR) |  |  |
-| public | [MOBILE_APPLICATION](../classes/YooKassa-Model-ConfirmationType.md#constant_MOBILE_APPLICATION) |  |  |
+| public | [REDIRECT](../classes/YooKassa-Model-ConfirmationType.md#constant_REDIRECT) |  | Необходимо направить плательщика на страницу партнера |
+| public | [EXTERNAL](../classes/YooKassa-Model-ConfirmationType.md#constant_EXTERNAL) |  | Для подтверждения платежа пользователю необходимо совершить действия во внешней системе (например, ответить на смс) |
+| public | [CODE_VERIFICATION](../classes/YooKassa-Model-ConfirmationType.md#constant_CODE_VERIFICATION) | *deprecated* | Необходимо ждать пока плательщик самостоятельно подтвердит платеж |
+| public | [EMBEDDED](../classes/YooKassa-Model-ConfirmationType.md#constant_EMBEDDED) |  | Необходимо получить одноразовый код от плательщика для подтверждения платежа |
+| public | [QR](../classes/YooKassa-Model-ConfirmationType.md#constant_QR) |  | Необходимо получить QR-код |
+| public | [MOBILE_APPLICATION](../classes/YooKassa-Model-ConfirmationType.md#constant_MOBILE_APPLICATION) |  | Необходимо совершить действия в мобильном приложении |
 
 ---
 ### Properties
@@ -53,6 +54,8 @@ ConfirmationType - Тип пользовательского процесса п
 ## Constants
 <a name="constant_REDIRECT" class="anchor"></a>
 ###### REDIRECT
+Необходимо направить плательщика на страницу партнера
+
 ```php
 REDIRECT = 'redirect'
 ```
@@ -60,20 +63,28 @@ REDIRECT = 'redirect'
 
 <a name="constant_EXTERNAL" class="anchor"></a>
 ###### EXTERNAL
+Для подтверждения платежа пользователю необходимо совершить действия во внешней системе (например, ответить на смс)
+
 ```php
 EXTERNAL = 'external'
 ```
 
 
 <a name="constant_CODE_VERIFICATION" class="anchor"></a>
-###### CODE_VERIFICATION
+###### ~~CODE_VERIFICATION~~
+Необходимо ждать пока плательщик самостоятельно подтвердит платеж
+
 ```php
 CODE_VERIFICATION = 'code_verification'
 ```
 
+**deprecated**
+Будет удален в будущих версиях
 
 <a name="constant_EMBEDDED" class="anchor"></a>
 ###### EMBEDDED
+Необходимо получить одноразовый код от плательщика для подтверждения платежа
+
 ```php
 EMBEDDED = 'embedded'
 ```
@@ -81,6 +92,8 @@ EMBEDDED = 'embedded'
 
 <a name="constant_QR" class="anchor"></a>
 ###### QR
+Необходимо получить QR-код
+
 ```php
 QR = 'qr'
 ```
@@ -88,6 +101,8 @@ QR = 'qr'
 
 <a name="constant_MOBILE_APPLICATION" class="anchor"></a>
 ###### MOBILE_APPLICATION
+Необходимо совершить действия в мобильном приложении
+
 ```php
 MOBILE_APPLICATION = 'mobile_application'
 ```
@@ -174,11 +189,11 @@ Static public valueExists(mixed $value) : bool
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

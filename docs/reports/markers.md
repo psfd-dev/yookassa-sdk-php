@@ -1,7 +1,11 @@
 # [YooKassa API SDK](../home.md)
 
 # Markers
-**No markers have been found in this project.**
+* 1 - lib/Request/SelfEmployed/SelfEmployedRequestBuilder.php
+### 1 - lib/Request/SelfEmployed/SelfEmployedRequestBuilder.php
+| Line | Type | Description |
+| ---- | ---- | ----------- |
+| 41 | TODO | @example 02-builder.php 11 78 Пример использования билдера |
 
 ---
 
@@ -13,11 +17,11 @@
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney

@@ -51,12 +51,12 @@ class CreateRefundRequestSerializerTest extends TestCase
                     'vat_code' => $item['vatCode'],
                 );
 
-                if (!empty($item['payment_mode'])) {
-                    $itemData['payment_mode'] = $item['payment_mode'];
+                if (!empty($item['paymentMode'])) {
+                    $itemData['payment_mode'] = $item['paymentMode'];
                 }
 
-                if (!empty($item['payment_subject'])) {
-                    $itemData['payment_subject'] = $item['payment_subject'];
+                if (!empty($item['paymentSubject'])) {
+                    $itemData['payment_subject'] = $item['paymentSubject'];
                 }
 
                 $expected['receipt']['items'][] = $itemData;
@@ -114,7 +114,9 @@ class CreateRefundRequestSerializerTest extends TestCase
                     'amount' => mt_rand(1, 999999),
                     'currency' => $currencies[mt_rand(0, count($currencies) - 1)],
                     'description' => '',
-                    'deal' => '',
+                    'deal' => array(
+                        'refund_settlements' => array(),
+                    ),
                     'receiptItems' => array(
                         array(
                             'title' => Random::str(10),

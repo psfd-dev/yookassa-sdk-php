@@ -3,7 +3,7 @@
 /**
  * The MIT License
  *
- * Copyright (c) 2022 "YooMoney", NBСO LLC
+ * Copyright (c) 2023 "YooMoney", NBСO LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -81,13 +81,15 @@ class PaymentReceiptResponse extends AbstractReceiptResponse
             $this->_payment_id = null;
         } elseif (!TypeCast::canCastToString($value)) {
             throw new InvalidPropertyValueTypeException('Invalid payment_id value type', 0, 'Receipt.paymentId');
-        } elseif (strlen((string)$value) !== self::LENGTH_PAYMENT_ID) {
+        } elseif (mb_strlen((string)$value) !== self::LENGTH_PAYMENT_ID) {
             throw new InvalidPropertyValueException(
-                'Invalid payment_id value: "'.$value.'"', 0, 'Receipt.paymentId', $value
+                'Invalid payment_id value: "' . $value . '"',
+                0,
+                'Receipt.paymentId',
+                $value
             );
         } else {
             $this->_payment_id = (string)$value;
         }
     }
-
 }

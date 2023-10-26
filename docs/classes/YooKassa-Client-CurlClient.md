@@ -25,6 +25,7 @@
 | public | [getTimeout()](../classes/YooKassa-Client-CurlClient.md#method_getTimeout) |  | Возвращает значение параметра CURLOPT_TIMEOUT |
 | public | [getUserAgent()](../classes/YooKassa-Client-CurlClient.md#method_getUserAgent) |  | Возвращает UserAgent |
 | public | [sendRequest()](../classes/YooKassa-Client-CurlClient.md#method_sendRequest) |  | Выполняет запрос, получает и возвращает обработанный ответ |
+| public | [setAdvancedCurlOptions()](../classes/YooKassa-Client-CurlClient.md#method_setAdvancedCurlOptions) |  | Устанавливает дополнительные настройки curl |
 | public | [setBearerToken()](../classes/YooKassa-Client-CurlClient.md#method_setBearerToken) |  | Устанавливает OAuth-токен магазина |
 | public | [setBody()](../classes/YooKassa-Client-CurlClient.md#method_setBody) |  | Устанавливает тело запроса |
 | public | [setConfig()](../classes/YooKassa-Client-CurlClient.md#method_setConfig) |  | Устанавливает настройки |
@@ -229,6 +230,23 @@ public sendRequest() : array
 | \YooKassa\Common\Exceptions\ApiConnectionException |  |
 
 **Returns:** array - 
+
+
+<a name="method_setAdvancedCurlOptions" class="anchor"></a>
+#### public setAdvancedCurlOptions() : void
+
+```php
+public setAdvancedCurlOptions() : void
+```
+
+**Summary**
+
+Устанавливает дополнительные настройки curl
+
+**Details:**
+* Inherited From: [\YooKassa\Client\CurlClient](../classes/YooKassa-Client-CurlClient.md)
+
+**Returns:** void - 
 
 
 <a name="method_setBearerToken" class="anchor"></a>
@@ -490,11 +508,11 @@ public setTimeout(int $timeout) : mixed
 
 ### Reports
 * [Errors - 0](../reports/errors.md)
-* [Markers - 0](../reports/markers.md)
-* [Deprecated - 13](../reports/deprecated.md)
+* [Markers - 1](../reports/markers.md)
+* [Deprecated - 35](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2023-08-02 using [phpDocumentor](http://www.phpdoc.org/)
 
-&copy; 2022 YooMoney
+&copy; 2023 YooMoney
