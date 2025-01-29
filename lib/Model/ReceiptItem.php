@@ -335,7 +335,7 @@ class ReceiptItem extends AbstractObject implements ReceiptItemInterface
                 'ReceiptItem.vatId',
                 $value
             );
-        } elseif ($value < 1 || $value > 6) {
+        } elseif ($value < 1 || $value > 10) {
             throw new InvalidPropertyValueException(
                 'Invalid vatId value in ReceiptItem',
                 0,
